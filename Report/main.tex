@@ -1,6 +1,5 @@
 \documentclass[12pt,oneside,a4paper,english]{article}
 \usepackage[T1]{fontenc}
-\usepackage[latin2]{inputenc}
 \usepackage[margin=2.25cm,headheight=26pt,includeheadfoot]{geometry}
 \usepackage[english]{babel}
 \usepackage{listings}
@@ -30,6 +29,9 @@
 \usepackage[english]{nomencl}
 \usepackage{xcolor}
 \usepackage{lipsum}
+\usepackage[utf8]{inputenc}
+\usepackage{array}
+\usepackage{multirow}
 
 
 % --- set footer and header ---
@@ -37,7 +39,7 @@
 \fancyhf{}
 
 \setlength{\parindent}{2em}
-\title{Title of the xdddd} % to reference as \title, dont use \maketitle
+\title{CDIO - Del 3} % to reference as \title, dont use \maketitle
 \makeatletter\let\Title\@title\makeatother
 
 
@@ -84,35 +86,72 @@ numbersep=0.5cm
 \newpage
 \pagenumbering{arabic} 
 \fancyfoot[C]{Page \thepage\ of \pageref{EndOfText}}
-
-\section{Introduction} \label{ch1}
-\input{sources/1_introduction.tex} 
-
 \label{EndOfText}
 
 \newpage
-\pagenumbering{Roman} 
-\addcontentsline{toc}{section}{List of Figures}
-\fancyfoot[C]{Page \thepage\ of \pageref{endOfDoc}}
-\listoffigures
+\input{Report/sources/Timeregnskab}
 \thispagestyle{fancy}
 
 \newpage
-\addcontentsline{toc}{section}{List of Tables}
-\listoftables
+\section{Abstract}
+\input{Report/sources/1__Abstract}
 \thispagestyle{fancy}
 
 \newpage
-\addcontentsline{toc}{section}{Nomenclature}
-\input{sources/9_nomenclat.tex}
+\section{Introduktion}
+\input{Report/sources/1_Introduction}
+\thispagestyle{fancy}
 
 \newpage
-\addcontentsline{toc}{section}{References}
-\bibliography{document.bib} 
-\bibliographystyle{ieeetr}
+\section{Kravspecifikation}
+\input{Report/sources/2_Kravspecifikation}
+\thispagestyle{fancy}
 
 \newpage
-\section{Appendix A} \label{ch6}
+\section{Analyse}
+\input{Report/sources/3_Analysis}
+\thispagestyle{fancy}
+
+\newpage 
+\subsection{Use-Cases}
+\input{Report/sources/UseCases}
+
+\newpage
+\subsection{Domæne}
+
+
+\newpage
+\section{Design}
+\input{Report/sources/4_Design}
+\thispagestyle{fancy}
+
+\newpage
+\subsection{Sekvensdiagram}
+
+\newpage
+\subsection{Systemsekvensdiagram}
+
+\newpage
+\subsection{Designklassediagram}
+
+\newpage
+\section{Implementering}
+\input{Report/sources/5_Implementation}
+\thispagestyle{fancy}
+
+\newpage
+\section{Projektplanlægning}
+\input{Report/sources/6_Projektplanlægning}
+\thispagestyle{fancy}
+
+\newpage
+\section{Test}
+\input{Report/sources/7_Test}
+\thispagestyle{fancy}
+
+\newpage
+\input{Report/sources/8_Conclusion}
+\thispagestyle{fancy}
 
 \label{endOfDoc}
 \end{document}
