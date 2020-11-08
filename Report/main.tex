@@ -32,7 +32,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{array}
 \usepackage{multirow}
-
+\usepackage{ragged2e}
 
 % --- set footer and header ---
 \pagestyle{fancy}
@@ -112,12 +112,8 @@ numbersep=0.5cm
 \input{Report/sources/3_Analysis}
 \thispagestyle{fancy}
 
-\newpage 
-\subsection{Use-Cases}
-\input{Report/sources/UseCases}
 
-\newpage
-\subsection{Domæne}
+
 
 
 \newpage
@@ -125,14 +121,7 @@ numbersep=0.5cm
 \input{Report/sources/4_Design}
 \thispagestyle{fancy}
 
-\newpage
-\subsection{Sekvensdiagram}
 
-\newpage
-\subsection{Systemsekvensdiagram}
-
-\newpage
-\subsection{Designklassediagram}
 
 \newpage
 \section{Implementering}
@@ -140,13 +129,13 @@ numbersep=0.5cm
 \thispagestyle{fancy}
 
 \newpage
-\section{Projektplanlægning}
-\input{Report/sources/6_Projektplanlægning}
+\section{Test}
+\input{Report/sources/6_Test}
 \thispagestyle{fancy}
 
 \newpage
 \section{Test}
-\input{Report/sources/7_Test}
+\input{Report/sources/7_Projektplanlægning}
 \thispagestyle{fancy}
 
 \newpage
