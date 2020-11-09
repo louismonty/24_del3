@@ -5,7 +5,9 @@ import java.util.Random;
 public class Dice {
     Random rand = new Random();
     private int faceValue;
+    //constructor
     public Dice(){}
+
     public void roll(){
         this.faceValue = rand.nextInt(6)+1;
     }
