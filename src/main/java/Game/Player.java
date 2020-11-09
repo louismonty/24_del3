@@ -1,37 +1,69 @@
 package Game;
 
 public class Player {
+    //playerName Getter
+    public String getPlayerName()
+    {
+        return playerName;
+    }
+
+    //playerName Setter
+    public void setPlayerName(String playerName)
+    {
+        this.playerName = playerName;
+    }
+
+    //playerAge Getter
+    public int getPlayerAge()
+    {
+        return playerAge;
+    }
+
+    //playerAge Setter
+    public void setPlayerAge(int playerAge)
+    {
+        this.playerAge = playerAge;
+    }
+
+    //playerAccount Getter
+    public Account getPlayerAccount()
+    {
+        return playerAccount;
+    }
+
+    //playerAccount Setter
+    public void setPlayerAccount(Account playerAccount)
+    {
+        this.playerAccount = playerAccount;
+    }
+
+    //playerPosition Getter
+    public int getPlayerPosition()
+    {
+        return playerPosition;
+    }
+
+    //playerPosition Setter
+    public void setPlayerPosition(int playerPosition)
+    {
+        this.playerPosition = playerPosition;
+    }
 
     //Class attributes
-    public String playerName;
-    public int playerAge = 0;
-    public String playerId;
-    public Account playerAccount;
+    private String playerName;
+    private int playerAge = 0;
+    private String playerId;
+    private Account playerAccount;
+    private int playerPosition;
     //public GUI playerTexture;
-    public int playerPosition;
 
     //Class constructor for the Player class
-    public Player(String playerName, int playerAge, String playerId, Account playerAccount /*, GUI playerTexture*/)
+    public Player(String playerName, int playerAge, Account playerAccount /*, GUI playerTexture*/)
     {
         //this.playerTexture = playerTexture;
         this.playerPosition = 0;
         this.playerAccount = playerAccount;
         this.playerName = playerName;
         this.playerAge = playerAge;
-        this.playerId = playerId;
-    }
-
-    //Method for user choosing player name
-    public String AddName(String newName)
-    {
-        this.playerName = newName;
-        return playerName;
-    }
-
-    //Method for user choosing player age
-    public int AddAge(int newAge)
-    {
-        this.playerAge = newAge;
-        return playerAge;
     }
 }
