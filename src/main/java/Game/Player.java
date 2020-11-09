@@ -52,7 +52,6 @@ public class Player {
     //Class attributes
     private String playerName;
     private int playerAge = 0;
-    private String playerId;
     private Account playerAccount;
     private int playerPosition;
     //public GUI playerTexture;
