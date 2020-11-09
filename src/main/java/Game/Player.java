@@ -1,4 +1,4 @@
-package Game;
+import Game.Account;
 
 public class Player {
     //playerName Getter
