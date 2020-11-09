@@ -2,54 +2,65 @@ package Game;
 
 public class Player {
     //playerName Getter
-    public String getPlayerName() {
+    public String getPlayerName()
+    {
         return playerName;
     }
 
     //playerName Setter
-    public void setPlayerName(String playerName) {
+    public void setPlayerName(String playerName)
+    {
         this.playerName = playerName;
     }
 
     //playerAge Getter
-    public int getPlayerAge() {
+    public int getPlayerAge()
+    {
         return playerAge;
     }
 
     //playerAge Setter
-    public void setPlayerAge(int playerAge) {
+    public void setPlayerAge(int playerAge)
+    {
         this.playerAge = playerAge;
     }
 
     //playerId Getter
-    public String getPlayerId() {
+    public String getPlayerId()
+    {
         return playerId;
     }
 
     //playerId Setter
-    public void setPlayerId(String playerId) {
+    public void setPlayerId(String playerId)
+    {
         this.playerId = playerId;
     }
 
     //playerAccount Getter
-    public Account getPlayerAccount() {
+    public Account getPlayerAccount()
+    {
         return playerAccount;
     }
 
     //playerAccount Setter
-    public void setPlayerAccount(Account playerAccount) {
+    public void setPlayerAccount(Account playerAccount)
+    {
         this.playerAccount = playerAccount;
     }
 
     //playerPosition Getter
-    public int getPlayerPosition() {
+    public int getPlayerPosition()
+    {
         return playerPosition;
     }
 
     //playerPosition Setter
-    public void setPlayerPosition(int playerPosition) {
+    public void setPlayerPosition(int playerPosition)
+    {
         this.playerPosition = playerPosition;
     }
+
     //Class attributes
     private String playerName;
     private int playerAge = 0;
