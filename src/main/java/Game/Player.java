@@ -1,3 +1,4 @@
+package Game;
 import Game.Account;
 
 public class Player {
@@ -23,18 +24,6 @@ public class Player {
     public void setPlayerAge(int playerAge)
     {
         this.playerAge = playerAge;
-    }
-
-    //playerId Getter
-    public String getPlayerId()
-    {
-        return playerId;
-    }
-
-    //playerId Setter
-    public void setPlayerId(String playerId)
-    {
-        this.playerId = playerId;
     }
 
     //playerAccount Getter
@@ -64,19 +53,18 @@ public class Player {
     //Class attributes
     private String playerName;
     private int playerAge = 0;
-    private String playerId;
     private Account playerAccount;
     private int playerPosition;
     //public GUI playerTexture;
 
     //Class constructor for the Player class
-    public Player(String playerName, int playerAge, String playerId, Account playerAccount /*, GUI playerTexture*/)
+    public Player(String playerName, int playerAge, Account playerAccount /*, GUI playerTexture*/)
     {
         //this.playerTexture = playerTexture;
         this.playerPosition = 0;
         this.playerAccount = playerAccount;
         this.playerName = playerName;
         this.playerAge = playerAge;
-        this.playerId = playerId;
+
     }
 }
