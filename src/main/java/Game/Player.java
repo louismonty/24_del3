@@ -1,5 +1,4 @@
 package Game;
-import Game.Account;
 
 public class Player {
     //playerName Getter
@@ -53,6 +52,7 @@ public class Player {
     //Class attributes
     private String playerName;
     private int playerAge = 0;
+    private String playerId;
     private Account playerAccount;
     private int playerPosition;
     //public GUI playerTexture;
@@ -65,6 +65,5 @@ public class Player {
         this.playerAccount = playerAccount;
         this.playerName = playerName;
         this.playerAge = playerAge;
-
     }
 }
