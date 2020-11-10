@@ -8,4 +8,12 @@ public class StartField extends Field
         super(positionID, colorID, name);
         this.startBonus = 2;
     }
+    public int getStartBonus()
+    {
+        return startBonus;
+    }
+    public String getName()
+    {
+        return name;
+    }
 }
