@@ -9,4 +9,8 @@ public class JailField extends Field
         super(positionID, colorID, name);
         bail = 1;
     }
+    public String getName()
+    {
+        return name;
+    }
 }
