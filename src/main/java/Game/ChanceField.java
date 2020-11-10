@@ -6,4 +6,8 @@ public class ChanceField extends Field
     {
         super(positionID, colorID, name);
     }
+    public String getName()
+    {
+        return name;
+    }
 }
