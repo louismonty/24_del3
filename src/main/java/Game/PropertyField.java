@@ -30,4 +30,8 @@ public class PropertyField extends Field
     {
         isPropertyBought = isBought;
     }
+    public String getName()
+    {
+        return name;
+    }
 }
