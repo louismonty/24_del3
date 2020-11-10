@@ -12,4 +12,8 @@ public class StartField extends Field
     {
         return startBonus;
     }
+    public String getName()
+    {
+        return name;
+    }
 }
