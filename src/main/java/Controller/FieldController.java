@@ -11,6 +11,9 @@ public class FieldController
 
     }
 
+    /**
+     * Creates gameboard by making an array of fields inheriting the Field class.
+     */
     public void createGameBoardFields()
     {
         gameboard[0] = new StartField(0, "white", "Start");
