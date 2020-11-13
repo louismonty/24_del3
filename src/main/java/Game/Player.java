@@ -49,6 +49,16 @@ public class Player {
         this.playerPosition = playerPosition;
     }
 
+    //playerId Getter
+    public int getPlayerId() {
+        return playerId;
+    }
+
+    //playerId Setter
+    public void setPlayerId(int playerId) {
+        this.playerId = playerId;
+    }
+
     //Class attributes
     private String playerName;
     private int playerAge = 0;
