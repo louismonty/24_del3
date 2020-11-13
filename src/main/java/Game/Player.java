@@ -49,15 +49,6 @@ public class Player {
         this.playerPosition = playerPosition;
     }
 
-    //playerId Getter
-    public int getPlayerId() {
-        return playerId;
-    }
-
-    //playerId Setter
-    public void setPlayerId(int playerId) {
-        this.playerId = playerId;
-    }
 
     //Class attributes
     private String playerName;
@@ -68,10 +59,9 @@ public class Player {
     //public GUI playerTexture;
 
     //Class constructor for the Player class
-    public Player(String playerName, int playerAge, int playerId, Account playerAccount /*, GUI playerTexture*/)
+    public Player(String playerName, int playerAge, Account playerAccount /*, GUI playerTexture*/)
     {
         //this.playerTexture = playerTexture;
-        this.playerId = playerId;
         this.playerPosition = 0;
         this.playerAccount = playerAccount;
         this.playerName = playerName;
