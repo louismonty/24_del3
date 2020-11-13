@@ -52,15 +52,16 @@ public class Player {
     //Class attributes
     private String playerName;
     private int playerAge = 0;
-    private String playerId;
     private Account playerAccount;
     private int playerPosition;
+    private int playerId;
     //public GUI playerTexture;
 
     //Class constructor for the Player class
-    public Player(String playerName, int playerAge, Account playerAccount /*, GUI playerTexture*/)
+    public Player(String playerName, int playerAge, int playerId, Account playerAccount /*, GUI playerTexture*/)
     {
         //this.playerTexture = playerTexture;
+        this.playerId = playerId;
         this.playerPosition = 0;
         this.playerAccount = playerAccount;
         this.playerName = playerName;
