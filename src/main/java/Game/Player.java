@@ -49,13 +49,12 @@ public class Player {
         this.playerPosition = playerPosition;
     }
 
-
     //Class attributes
     private String playerName;
     private int playerAge = 0;
+    private String playerId;
     private Account playerAccount;
     private int playerPosition;
-    private int playerId;
     //public GUI playerTexture;
 
     //Class constructor for the Player class
