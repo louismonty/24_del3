@@ -10,4 +10,20 @@ public class ChanceCard
         chanceCardID = id;
         chanceCardName = name;
     }
+
+    public void carCard()
+    {
+
+    }
+
+    public void startCard()
+    {
+
+    }
+
+    public void fiveFieldsForwardCard()
+    {
+
+    }
+
 }
