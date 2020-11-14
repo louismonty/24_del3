@@ -5,7 +5,7 @@ import Game.*;
 public class FieldController
 {
     Field gameboard[] = new Field[24];
-
+    ChanceCard chanceCardDeck[] = new ChanceCard[18];
     public FieldController()
     {
 
@@ -40,5 +40,26 @@ public class FieldController
         gameboard[21] = new ChanceField(21, "white", "Chance");
         gameboard[22] = new PropertyField(22, "blue", "Vandlandet", 5, 5);
         gameboard[23] = new PropertyField(23, "blue", "Vandlandet", 5, 5);
+    }
+    public void createChanceCardDeck()
+    {
+        chanceCardDeck[0] = new ChanceCard();
+        chanceCardDeck[1] = new ChanceCard();
+        chanceCardDeck[2] = new ChanceCard();
+        chanceCardDeck[3] = new ChanceCard();
+        chanceCardDeck[4] = new ChanceCard();
+        chanceCardDeck[5] = new ChanceCard();
+        chanceCardDeck[6] = new ChanceCard();
+        chanceCardDeck[7] = new ChanceCard();
+        chanceCardDeck[8] = new ChanceCard();
+        chanceCardDeck[9] = new ChanceCard();
+        chanceCardDeck[10] = new ChanceCard();
+        chanceCardDeck[11] = new ChanceCard();
+        chanceCardDeck[12] = new ChanceCard();
+        chanceCardDeck[13] = new ChanceCard();
+        chanceCardDeck[14] = new ChanceCard();
+        chanceCardDeck[15] = new ChanceCard();
+        chanceCardDeck[16] = new ChanceCard();
+        chanceCardDeck[17] = new ChanceCard();
     }
 }
