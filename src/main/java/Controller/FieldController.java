@@ -11,11 +11,14 @@ public class FieldController
 
     }
 
+    /**
+     * Creates gameboard by making an array of fields inheriting the Field class.
+     */
     public void createGameBoardFields()
     {
         gameboard[0] = new StartField(0, "white", "Start");
-        gameboard[1] = new PropertyField(1, "brown", "Burgerbaren", 1, 1);
-        gameboard[2] = new PropertyField(2, "brown", "Pizzariaet", 1, 1);
+        gameboard[1] = new PropertyField(1, "orange", "Burgerbaren", 1, 1);
+        gameboard[2] = new PropertyField(2, "orange", "Pizzariaet", 1, 1);
         gameboard[3] = new ChanceField(3, "white", "Chance");
         gameboard[4] = new PropertyField(4, "lightblue", "Slikbutikken", 1, 1);
         gameboard[5] = new PropertyField(5, "lightblue", "Iskiosken", 1, 1);
@@ -32,8 +35,8 @@ public class FieldController
         gameboard[16] = new PropertyField(16, "yellow", "Legetøjsbutikken", 3, 3);
         gameboard[17] = new PropertyField(17, "yellow", "Dyrehandlen", 3, 3);
         gameboard[18] = new JailField(18, "white", "Gå i fængsel");
-        gameboard[19] = new PropertyField(19, "Green", "Bowlinghallen", 4, 4);
-        gameboard[20] = new PropertyField(20, "Green", "Zoo", 4, 4);
+        gameboard[19] = new PropertyField(19, "green", "Bowlinghallen", 4, 4);
+        gameboard[20] = new PropertyField(20, "green", "Zoo", 4, 4);
         gameboard[21] = new ChanceField(21, "white", "Chance");
         gameboard[22] = new PropertyField(22, "blue", "Vandlandet", 5, 5);
         gameboard[23] = new PropertyField(23, "blue", "Vandlandet", 5, 5);
