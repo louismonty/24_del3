@@ -22,15 +22,15 @@ public class ChanceCard
 
     public void startCard()
     {
-        StartField.addStartBonus();
+        Account.AddBalance(StartField.getStartBonus());
     }
 
     public void fiveFieldsForwardCard()
     {
-        int fieldsToMove;
+        int fieldsToMove = 0;
         Scanner chanceScan = new Scanner(System.in);
         System.out.println("Du kan rykke op til 5 felter frem. Indtast hvor mange felter du ønsker at rykke:");
-        fieldsToMove = chanceScan.nextInt();
+
         while(fieldsToMove<1 || fieldsToMove>5)
         {
             System.out.println("Indtast et tal mellem 1-5");
@@ -38,5 +38,7 @@ public class ChanceCard
         }
         newPlayerPosition(fieldsToMove);
     }
+
+
 
 }
