@@ -84,21 +84,16 @@ numbersep=0.5cm
 \thispagestyle{fancy} % force page style
 
 \newpage
-
-
-\newpage
 \section{Timeregnskab}
-\input{Report/sources/Timeregnskab}
+\input{Report/sources/0a_Timeregnskab}
 \thispagestyle{fancy}
 \pagenumbering{arabic} 
 \fancyfoot[C]{Page \thepage\ of \pageref{endOfDoc}}
-\label{EndOfText}
 
 \newpage
 \section{Abstract}
 \input{Report/sources/1__Abstract}
 \thispagestyle{fancy}
-\label{EndOfText}
 
 \newpage
 \section{Introduktion}
@@ -141,10 +136,30 @@ numbersep=0.5cm
 \input{Report/sources/7_Projektplanlægning}
 \thispagestyle{fancy}
 
+
 \newpage
 \section{Konklusion}
 \input{Report/sources/8_Conclusion}
 \thispagestyle{fancy}
 
+\newpage
+\begin{flushleft}
+\section{Tegn og ordforklaring}
+\end{flushleft}
+\input{Report/sources/9_Ordforklaring}
+\thispagestyle{fancy}
+
+
+\newpage
+\section{Litteraturliste}
+\input{Report/sources/9a_Bibliography}
+
+
+\newpage
+\section{Bilag}
+\label{endOfText}
 \label{endOfDoc}
+
+
+
 \end{document}
