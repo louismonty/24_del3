@@ -55,13 +55,12 @@ public class Player {
     private int playerAge = 0;
     private Account playerAccount;
     private int playerPosition;
-    private int playerId;
-    //public GUI playerTexture;
+    public String playerColor;
 
     //Class constructor for the Player class
-    public Player(String playerName, int playerAge, Account playerAccount /*, GUI playerTexture*/)
+    public Player(String playerName, int playerAge, Account playerAccount, String playerColor)
     {
-        //this.playerTexture = playerTexture;
+        this.playerColor = playerColor;
         this.playerPosition = 0;
         this.playerAccount = playerAccount;
         this.playerName = playerName;
