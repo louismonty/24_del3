@@ -2,8 +2,20 @@ package Game;
 
 public class Account {
 
+    //balance Getter
+    public int getBalance()
+    {
+        return balance;
+    }
+
+    //balance Setter
+    public void setBalance(int balance)
+    {
+        this.balance = balance;
+    }
+
     //Class attributes
-    public int balance;
+    private int balance;
 
     //Class constructor for the Account class
     public Account(int balance)
