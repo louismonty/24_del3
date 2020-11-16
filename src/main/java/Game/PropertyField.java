@@ -8,13 +8,13 @@ public class PropertyField extends Field
     Field partner;
     private Player owner;
 
-    public PropertyField(int positionID, String colorID, String name, int price, int rent)
+    public PropertyField(int positionID, String colorID, String name, int price, int rent, Field partner)
     {
         super(positionID, colorID, name);
         this.price = price;
         this.rent = rent;
         this.isPropertyBought = false;
-        Field partner;
+        this.partner = partner;
         Player owner;
     }
 
