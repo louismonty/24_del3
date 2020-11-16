@@ -35,14 +35,10 @@ public class GUIController {
         GUI_Field field[] = gui.getFields();
         field[position].setCar(player,true);
     }
-    public static void movePlayer(int currentPlayerPosition,int move,GUI_Player player){
+    public static void movePlayer(int currentPlayerPosition,int move,GUI_Player player) {
         GUI_Field field[] = gui.getFields();
-        field[currentPlayerPosition].setCar(player,false);
-        field[(currentPlayerPosition+move)%24].setCar(player,true);
-    }
-    public static void makeOwner(int fields,GUI_Player player){
-        GUI_Field field[] = gui.getFields();
-        field[fields].
+        field[currentPlayerPosition].setCar(player, false);
+        field[(currentPlayerPosition + move) % 24].setCar(player, true);
     }
 
 }
