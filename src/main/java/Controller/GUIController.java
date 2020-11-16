@@ -21,28 +21,27 @@ public class GUIController {
     public static String fourButtons(String text, String button1,String button2,String button3,String button4){
         return gui.getUserButtonPressed(text,button1,button2,button3,button4);
     }
+    public static String fiveButtons(String text, String button1,String button2,String button3,String button4,String button5){
+        return gui.getUserButtonPressed(text,button1,button2,button3,button4,button5);
+    }
     public static int intigerInput(String text,int min, int max){
         int input;
         while(true){
-        input = gui.getUserInteger(text,min,max);
+            input = gui.getUserInteger(text,min,max);
             if(min<input&& input>max){
-               break;
+                break;
             }
         }
         return input;
-        }
+    }
     public static void placePlayer(int position, GUI_Player player){
         GUI_Field field[] = gui.getFields();
         field[position].setCar(player,true);
     }
-    public static void movePlayer(int currentPlayerPosition,int move,GUI_Player player){
+    public static void movePlayer(int currentPlayerPosition,int move,GUI_Player player) {
         GUI_Field field[] = gui.getFields();
-        field[currentPlayerPosition].setCar(player,false);
-        field[(currentPlayerPosition+move)%24].setCar(player,true);
-    }
-    public static void makeOwner(int fields,GUI_Player player){
-        GUI_Field field[] = gui.getFields();
-        field[fields].
+        field[currentPlayerPosition].setCar(player, false);
+        field[(currentPlayerPosition + move) % 24].setCar(player, true);
     }
 
 }
