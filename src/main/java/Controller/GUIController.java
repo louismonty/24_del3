@@ -1,33 +1,48 @@
 package Controller;
 
-import gui_fields.GUI_Chance;
-import gui_fields.GUI_Field;
-import gui_fields.GUI_Start;
-import gui_fields.GUI_Street;
+import gui_fields.*;
 import gui_main.GUI;
 
 import java.awt.*;
 
 public class GUIController {
 
+    private static GUI gui = new GUI();
 
-
-    public void showMessege(String message){
-        //gui.showMessage(message);
+    public static void showMessege(String message){
+        gui.showMessage(message);
     }
-    public void showDice(int dice){
-        //gui.setDie(dice);
+    public static void showDice(int dice){
+        gui.setDie(dice);
     }
-    public static void main(String[] args){
-        GUI_Field[] fields = new GUI_Field[5];
-        fields[0] = new GUI_Start("Start", "Modtag: 2", "Modtag  2 m,-\nnÃ¥r de passerer start", Color.RED, Color.BLACK);
-        fields[1] = new GUI_Street("Gatekjøkkenet Burgerbaren", "Pris:  1", "Gatekjøkkenet Burgerbaren", "Leje:  1", new Color(156, 143, 56), Color.BLACK);
-        fields[2] = new GUI_Street("Pizzahuset pizzeriaet", "Pris:  1", "Pizzahuset pizzeriaet", "Leje:  1", new Color(156, 143, 56), Color.BLACK);
-        fields[3] = new GUI_Chance("?", "chance", "Ta' et chancekort.", new Color(204, 204, 204), Color.BLACK);
-        fields[4] =  new GUI_Street("Pizzahuset pizzeriaet", "Pris:  1", "Pizzahuset pizzeriaet", "Leje:  1", new Color(156, 143, 56), Color.BLACK);
-
-        GUI gui = new GUI(fields);
+    public static String twoButtons(String text,String button1,String button2){
+        return gui.getUserButtonPressed(text,button1,button2);
     }
-
+    public static String fourButtons(String text, String button1,String button2,String button3,String button4){
+        return gui.getUserButtonPressed(text,button1,button2,button3,button4);
+    }
+    public static int intigerInput(String text,int min, int max){
+        int input;
+        while(true){
+        input = gui.getUserInteger(text,min,max);
+            if(min<input&& input>max){
+               break;
+            }
+        }
+        return input;
+        }
+    public static void placePlayer(int position, GUI_Player player){
+        GUI_Field field[] = gui.getFields();
+        field[position].setCar(player,true);
+    }
+    public static void movePlayer(int currentPlayerPosition,int move,GUI_Player player){
+        GUI_Field field[] = gui.getFields();
+        field[currentPlayerPosition].setCar(player,false);
+        field[(currentPlayerPosition+move)%24].setCar(player,true);
+    }
+    public static void makeOwner(int fields,GUI_Player player){
+        GUI_Field field[] = gui.getFields();
+        field[fields].
+    }
 
 }
