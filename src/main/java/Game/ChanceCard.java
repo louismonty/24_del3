@@ -11,14 +11,25 @@ public class ChanceCard
         chanceCardID = id;
         chanceCardName = name;
     }
+    public void dogCard()
+    {
+        Player1.setHasChanceCard(true);
+    }
+
+    public void shipCard()
+    {
+        Player2.setHasChanceCard(true);
+    }
+
+    public void catCard()
+    {
+        Player3.setHasChanceCard(true);
+    }
 
     public void carCard()
     {
-        Player1.setHasChanceCard(true);
-
+        Player4.setHasChanceCard(true);
     }
-
-
 
     public void startCard()
     {
