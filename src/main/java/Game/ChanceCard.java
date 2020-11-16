@@ -11,14 +11,14 @@ public class ChanceCard
         chanceCardID = id;
         chanceCardName = name;
     }
-/* Needs player color and next turn option
+
     public void carCard()
     {
-        if(Player.color == "Green")
+        Player1.setHasChanceCard(true);
 
     }
 
- */
+
 
     public void startCard()
     {
