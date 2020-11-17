@@ -53,7 +53,7 @@ public class PropertyField extends Field
     public void payRent(Account accountForCurrentPlayer, Account ownerOfField)
     {
         accountForCurrentPlayer.subtractBalance(-rent);
-        ownerOfField.addBalance(rent)
+        ownerOfField.addBalance(rent);
     }
     public boolean isPairBought(PropertyField field)
     {
