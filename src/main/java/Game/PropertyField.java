@@ -54,9 +54,12 @@ public class PropertyField extends Field
     {
         accountForCurrentPlayer.setBalance(-rent);
     }
-    public boolean isPairBought()
+    public boolean isPairBought(PropertyField field)
     {
-        if(PropertyField.getOwner().equals(PropertyField.getOwner(PropertyField.getPartner()))==true)
+        if(field.getOwner().equals(field.getPartner())==true)
+            return true;
+        else
+            return false;
     }
 
 }
