@@ -1,9 +1,5 @@
 package Game;
-import Controller.FieldController;
 import Controller.GUIController;
-import Controller.PlayerController;
-
-import java.util.Scanner;
 
 public class ChanceCard
 {
@@ -43,9 +39,20 @@ public class ChanceCard
 
     public void fiveFieldsForwardCard(Player currentPlayer)
     {
-        int newPosition = (int) GUIController.intigerInput("Ryk op til 5 felter frem.", 1, 5);
+        int newPosition = GUIController.intigerInput("Ryk op til 5 felter frem.", 1, 5);
         newPosition = newPosition + currentPlayer.getPlayerPosition();
         currentPlayer.setPlayerPosition(newPosition);
+    }
+    public void checkIfPropertyIsBought(Player player, PropertyField field)
+    {
+        if(field.getIsPropertyBought()==false)
+        {
+            field.setOwner(player);
+        }
+        else
+        {
+            field.payRent(player.getPlayerAccount());
+        }
     }
 
     public void freeOrangeField(Player currentPlayer, PropertyField currentField)
@@ -53,30 +60,22 @@ public class ChanceCard
         if(GUIController.twoButtons("Gratis felt! Ryk frem til et orange felt. Hvis det er ledigt, får du det gratis! Ellers skal du betale leje til ejeren", "Burgerbaren", "Pizzariaet").equals("Burgerbaren") ==true)
             currentPlayer.setPlayerPosition(1);
         else currentPlayer.setPlayerPosition(2);
-        if(currentField.getIsPropertyBought()==false)
-        {
-            currentField.setOwner(currentPlayer);
-        }
-        else
-        {
-            currentField.payRent(currentPlayer);
-        }
+        checkIfPropertyIsBought(currentPlayer, currentField);
     }
 
-    public void freeLightBlueField(Player currentPlayer)
+    public void freeLightBlueField(Player currentPlayer, PropertyField currentField)
     {
         if(GUIController.twoButtons("Gratis felt! Ryk frem til et lyseblåt felt. Hvis det er ledigt, får du det gratis! Ellers skal du betale leje til ejeren", "Slikbutikken", "Iskiosken").equals("Burgerbaren") ==true)
             currentPlayer.setPlayerPosition(4);
         else currentPlayer.setPlayerPosition(5);
+        checkIfPropertyIsBought(currentPlayer, currentField);
     }
 
-    public void freeRedField(Player currentPlayer)
+    public void freeRedField(Player currentPlayer, PropertyField currentField)
     {
         if(GUIController.twoButtons("Gratis felt! Ryk frem til et orange felt. Hvis det er ledigt, får du det gratis! Ellers skal du betale leje til ejeren", "Spillehallen", "Biografen").equals("Burgerbaren") ==true)
             currentPlayer.setPlayerPosition(13);
         else currentPlayer.setPlayerPosition(14);
+        checkIfPropertyIsBought(currentPlayer, currentField);
     }
-
-
-
 }
