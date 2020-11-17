@@ -15,28 +15,23 @@ public class ChanceCard
     {
         player1.setHasChanceCard(true);
     }
-
     public void bluePlayerCard(Player player2)
     {
         player2.setHasChanceCard(true);
     }
-
     public void redPlayerCard(Player player3)
     {
         player3.setHasChanceCard(true);
     }
-
     public void greenPlayerCard(Player player4)
     {
         player4.setHasChanceCard(true);
     }
-
     public void startCard(Player currentPlayer, StartField field)
     {
         currentPlayer.setPlayerPosition(0);
-        currentPlayer.getPlayerAccount().AddBalance(field.getStartBonus());
+        currentPlayer.getPlayerAccount().addBalance(field.getStartBonus());
     }
-
     public void fiveFieldsForwardCard(Player currentPlayer, GUIController GUIController)
     {
         int newPosition = GUIController.intigerInput("Ryk op til 5 felter frem.", 1, 5);
@@ -54,7 +49,23 @@ public class ChanceCard
             field.payRent(player.getPlayerAccount());
         }
     }
-
+    public void tooMuchCandyCard(Player currentPlayer)
+    {
+        currentPlayer.getPlayerAccount().subtractBalance(2);
+    }
+    public void strandpromenadenCard(Player currentPlayer)
+    {
+        currentPlayer.setPlayerPosition(23);
+    }
+    public void homeworkCard(Player currentPlayer)
+    {
+        currentPlayer.getPlayerAccount().addBalance(2);
+    }
+    public void skaterparkenCard(Player currentPlayer, PropertyField field)
+    {
+        currentPlayer.setPlayerPosition(10);
+        checkIfPropertyIsBought(currentPlayer, field);
+    }
     public void freeOrangeCard(Player currentPlayer, PropertyField currentField, GUIController GUIController)
     {
         if(GUIController.twoButtons("Gratis felt! Ryk frem til et orange felt. " +
@@ -64,7 +75,6 @@ public class ChanceCard
         else currentPlayer.setPlayerPosition(11);
         checkIfPropertyIsBought(currentPlayer, currentField);
     }
-
     public void freeLightBlueCard(Player currentPlayer, PropertyField currentField, GUIController GUIController)
     {
         if(GUIController.twoButtons("Gratis felt! Ryk frem til et lyseblåt felt. " +
@@ -74,7 +84,6 @@ public class ChanceCard
         else currentPlayer.setPlayerPosition(5);
         checkIfPropertyIsBought(currentPlayer, currentField);
     }
-
     public void freeRedCard(Player currentPlayer, PropertyField currentField, GUIController GUIController)
     {
         if(GUIController.twoButtons("Gratis felt! Ryk frem til et rødt felt. " +
@@ -84,7 +93,6 @@ public class ChanceCard
         else currentPlayer.setPlayerPosition(14);
         checkIfPropertyIsBought(currentPlayer, currentField);
     }
-
     public void freeOrangeOrGreenCard(Player currentPlayer, PropertyField currentField, GUIController GUIController)
     {
         String button = GUIController.fourButtons("Gratis felt! Ryk frem til et orange eller grønt felt." +
@@ -108,7 +116,6 @@ public class ChanceCard
         }
         checkIfPropertyIsBought(currentPlayer, currentField);
     }
-
     public void freePinkOrBlueCard(Player currentPlayer, PropertyField currentField, GUIController GUIController)
     {
         String button = GUIController.fourButtons("Gratis felt! Ryk frem til et pink eller blåt felt." +
