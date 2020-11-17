@@ -37,7 +37,7 @@ public class ChanceCard
         currentPlayer.getPlayerAccount().AddBalance(field.getStartBonus());
     }
 
-    public void fiveFieldsForwardCard(Player currentPlayer)
+    public void fiveFieldsForwardCard(Player currentPlayer, GUIController GUIController)
     {
         int newPosition = GUIController.intigerInput("Ryk op til 5 felter frem.", 1, 5);
         newPosition = newPosition + currentPlayer.getPlayerPosition();
