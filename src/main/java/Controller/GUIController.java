@@ -1,6 +1,5 @@
 package Controller;
 
-import Game.Player;
 import gui_fields.*;
 import gui_main.GUI;
 
@@ -36,7 +35,14 @@ public class GUIController {
         return fields;
     }
 
-
+    public static GUI_Player[] createplayer(String[] names, int startbalance){
+        GUI_Player[] players = new GUI_Player[names.length];
+        for(int i = 0;i<names.length;i++ ) {
+            players[i] = new GUI_Player(names[i],startbalance);
+            gui.addPlayer(players[i]);
+        }
+        return players;
+    }
 
     private static GUI gui = new GUI(createFields());
 
@@ -71,8 +77,8 @@ public class GUIController {
     }
     public static void movePlayer(int currentPlayerPosition,int move,GUI_Player player) {
         GUI_Field field[] = gui.getFields();
-        field[currentPlayerPosition].setCar(player, false);
-        field[(currentPlayerPosition + move) % 24].setCar(player, true);
+        field[currentPlayerPosition%23].setCar(player, false);
+        field[(currentPlayerPosition + move) % 23].setCar(player, true);
     }
 
 }
