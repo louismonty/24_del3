@@ -56,5 +56,5 @@ public class FieldController
     }
 
 
-    // getters: name, owner, colorid lavet om til rgb
+
 }
