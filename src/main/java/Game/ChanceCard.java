@@ -55,7 +55,7 @@ public class ChanceCard
         }
     }
 
-    public void freeOrangeField(Player currentPlayer, PropertyField currentField)
+    public void freeOrangeField(Player currentPlayer, PropertyField currentField, GUIController GUIController)
     {
         if(GUIController.twoButtons("Gratis felt! Ryk frem til et orange felt. Hvis det er ledigt, får du det gratis! Ellers skal du betale leje til ejeren", "Burgerbaren", "Pizzariaet").equals("Burgerbaren") ==true)
             currentPlayer.setPlayerPosition(1);
@@ -63,7 +63,7 @@ public class ChanceCard
         checkIfPropertyIsBought(currentPlayer, currentField);
     }
 
-    public void freeLightBlueField(Player currentPlayer, PropertyField currentField)
+    public void freeLightBlueField(Player currentPlayer, PropertyField currentField, GUIController GUIController)
     {
         if(GUIController.twoButtons("Gratis felt! Ryk frem til et lyseblåt felt. Hvis det er ledigt, får du det gratis! Ellers skal du betale leje til ejeren", "Slikbutikken", "Iskiosken").equals("Burgerbaren") ==true)
             currentPlayer.setPlayerPosition(4);
@@ -71,7 +71,7 @@ public class ChanceCard
         checkIfPropertyIsBought(currentPlayer, currentField);
     }
 
-    public void freeRedField(Player currentPlayer, PropertyField currentField)
+    public void freeRedField(Player currentPlayer, PropertyField currentField, GUIController GUIController)
     {
         if(GUIController.twoButtons("Gratis felt! Ryk frem til et orange felt. Hvis det er ledigt, får du det gratis! Ellers skal du betale leje til ejeren", "Spillehallen", "Biografen").equals("Burgerbaren") ==true)
             currentPlayer.setPlayerPosition(13);
