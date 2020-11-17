@@ -60,8 +60,8 @@ public class PlayerController {
         this.playerArray = playerArray;
     }
 
-    public int getCurrentPlayer() {
-        return currentPlayer;
+    public Player getCurrentPlayer() {
+        return playerArray[currentPlayer];
     }
 
     private int currentPlayer = 0;
