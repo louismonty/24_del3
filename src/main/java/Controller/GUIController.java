@@ -46,6 +46,8 @@ public class GUIController {
 
     private static GUI gui = new GUI(createFields());
 
+    public static GUI_Field field[] = gui.getFields();
+
     public static void showMessege(String message){
         gui.showMessage(message);
     }
@@ -72,13 +74,24 @@ public class GUIController {
         return input;
     }
     public static void placePlayer(int position, GUI_Player player){
-        GUI_Field field[] = gui.getFields();
         field[position].setCar(player,true);
     }
     public static void movePlayer(int currentPlayerPosition,int move,GUI_Player player) {
-        GUI_Field field[] = gui.getFields();
-        field[currentPlayerPosition%23].setCar(player, false);
-        field[(currentPlayerPosition + move) % 23].setCar(player, true);
+        field[currentPlayerPosition%24].setCar(player, false);
+        field[(currentPlayerPosition + move) % 24].setCar(player, true);
+    }
+    public static void makeOwner(int currentField,Color playerColor){// Color from player
+        GUI_Ownable t = (GUI_Ownable)field[currentField];
+        t.setBorder(playerColor);
+    }
+    public static Boolean isFieldOwnebel(int playerPosition){
+        if(field[playerPosition] instanceof GUI_Ownable){
+            return true;
+        }
+        else{return false;}
+    }
+    public static void showChanceCard(String text){
+        gui.displayChanceCard(text);
     }
 
 }
