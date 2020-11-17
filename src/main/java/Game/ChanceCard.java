@@ -16,63 +16,64 @@ public class ChanceCard
     }
     public void dogCard()
     {
-        Player1.setHasChanceCard(true);
+        player1.setHasChanceCard(true);
     }
 
     public void shipCard()
     {
-        Player2.setHasChanceCard(true);
+        player2.setHasChanceCard(true);
     }
 
     public void catCard()
     {
-        Player3.setHasChanceCard(true);
+        player3.setHasChanceCard(true);
     }
 
     public void carCard()
     {
-        Player4.setHasChanceCard(true);
+        player4.setHasChanceCard(true);
     }
 
     public void startCard()
     {
-        Player.setPosition(0);
-        Account.AddBalance(StartField.getStartBonus());
+        getCurrentPlayer().setPosition(0);
+        getCurrentPlayer().AddBalance(gameboard[0].getStartBonus());
     }
 
     public void fiveFieldsForwardCard()
     {
-        GUIController.fiveButtons("Ryk op til 5 felter frem.", "1", "2", "3", "4", "5");
-        if(fiveButtons)
+        int temp = (int) GUIController.intigerInput("Ryk op til 5 felter frem.", 1, 5);
+        temp = temp + getCurrentPlayerPosition() ;
+        setCurrentPlayerPosition(temp);
     }
 
     public void freeOrangeField()
     {
         if(GUIController.twoButtons("Gratis felt! Ryk frem til et orange felt. Hvis det er ledigt, får du det gratis! Ellers skal du betale leje til ejeren", "Burgerbaren", "Pizzariaet").equals("Burgerbaren") ==true)
-            Player.setPlayerPosition(1);
-        else Player.setPlayerPosition(2);
-        if(PropertyField.getIsPropertyBought()==false)
+            getCurrentPlayer().setPlayerPosition(1);
+        else getCurrentPlayer().setPlayerPosition(2);
+        if(getCurrentField.getIsPropertyBought()==false)
         {
-            PropertyField.setOwner(Player);
+            getCurrentField().setOwner(getCurrentPlayer());
         }
         else
         {
-            PropertyField.payRent();
+            getCurrentField().payRent();
         }
     }
 
     public void freeLightBlueField()
     {
         if(GUIController.twoButtons("Gratis felt! Ryk frem til et lyseblåt felt. Hvis det er ledigt, får du det gratis! Ellers skal du betale leje til ejeren", "Slikbutikken", "Iskiosken").equals("Burgerbaren") ==true)
-            Player.setPlayerPosition(4);
-        else Player.setPlayerPosition(5);
+            getCurrentPlayer().setPlayerPosition(4);
+        else getCurrentPlayer().setPlayerPosition(5);
     }
 
     public void freeRedField()
     {
         if(GUIController.twoButtons("Gratis felt! Ryk frem til et orange felt. Hvis det er ledigt, får du det gratis! Ellers skal du betale leje til ejeren", "Spillehallen", "Biografen").equals("Burgerbaren") ==true)
-            Player.setPlayerPosition(13);
-        else Player.setPlayerPosition(14);
+            getCurrentPlayer().setPlayerPosition(13);
+        else getCurrentPlayer().setPlayerPosition(14);
     }
 
 
