@@ -3,7 +3,6 @@ package Controller;
 import Game.Account;
 import Game.Player;
 
-
 public class PlayerController {
 
     private Player player1;
@@ -27,7 +26,6 @@ public class PlayerController {
     public void setPlayer2(Player player) {
         this.player2 = player;
     }
-
 
     private Player player3;
     public Player getPlayer3()
@@ -60,6 +58,26 @@ public class PlayerController {
 
     public void setPlayerArray(Player[] playerArray) {
         this.playerArray = playerArray;
+    }
+
+    public int getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    public int getAmountOfPlayers() {
+        return amountOfPlayers;
+    }
+
+    public void setAmountOfPlayers(int amountOfPlayers) {
+        this.amountOfPlayers = amountOfPlayers;
+    }
+
+    private int currentPlayer = 0;
+    private int amountOfPlayers;
+
+    public void NextPlayer()
+    {
+        currentPlayer = (currentPlayer + 1)% (amountOfPlayers);
     }
 
     public void Make2Players()
