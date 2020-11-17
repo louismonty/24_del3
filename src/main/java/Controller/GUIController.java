@@ -6,7 +6,7 @@ import gui_main.GUI;
 import java.awt.*;
 
 public class GUIController {
-    private static GUI_Field[] createFields() {
+    private GUI_Field[] createFields() {
         GUI_Field[] fields = new GUI_Field[24];
         fields[0] = new GUI_Start("Start", "Modtag: 2 M", "Modtag kr. 2M,-\nnår de passerer start", Color.RED, Color.BLACK);
         fields[1] = new GUI_Street("Burgerbaren", "Pris:  1M", "Burgerbaren servere nogle mums burgere" , "Leje:  1M", new Color(255,165,0), Color.BLACK);
@@ -35,7 +35,7 @@ public class GUIController {
         return fields;
     }
 
-    public static GUI_Player[] createplayer(String[] names, int startbalance){
+    public GUI_Player[] createplayer(String[] names, int startbalance){
         GUI_Player[] players = new GUI_Player[names.length];
         for(int i = 0;i<names.length;i++ ) {
             players[i] = new GUI_Player(names[i],startbalance);
@@ -44,29 +44,29 @@ public class GUIController {
         return players;
     }
 
-    private static GUI gui = new GUI(createFields());
+    private GUI gui = new GUI(createFields());
 
-    public static GUI_Field field[] = gui.getFields();
+    public GUI_Field field[] = gui.getFields();
 
-    public static void showMessege(String message){
+    public void showMessege(String message){
         gui.showMessage(message);
     }
-    public static void showDice(int dice){
+    public void showDice(int dice){
         gui.setDie(dice);
     }
-    public static void oneButton(String text,String button1){
+    public void oneButton(String text,String button1){
         gui.getUserButtonPressed(text,button1);
     }
-    public static String twoButtons(String text,String button1,String button2){
+    public String twoButtons(String text,String button1,String button2){
         return gui.getUserButtonPressed(text,button1,button2);
     }
-    public static String fourButtons(String text, String button1,String button2,String button3,String button4){
+    public String fourButtons(String text, String button1,String button2,String button3,String button4){
         return gui.getUserButtonPressed(text,button1,button2,button3,button4);
     }
-    public static String fiveButtons(String text, String button1,String button2,String button3,String button4,String button5){
+    public String fiveButtons(String text, String button1,String button2,String button3,String button4,String button5){
         return gui.getUserButtonPressed(text,button1,button2,button3,button4,button5);
     }
-    public static int intigerInput(String text,int min, int max){
+    public int intigerInput(String text,int min, int max){
         int input;
         while(true){
             input = gui.getUserInteger(text,min,max);
@@ -76,27 +76,27 @@ public class GUIController {
         }
         return input;
     }
-    public static void placePlayer(int position, GUI_Player player){
+    public void placePlayer(int position, GUI_Player player){
         field[position].setCar(player,true);
     }
-    public static void movePlayer(int currentPlayerPosition,int move,GUI_Player player) {
+    public void movePlayer(int currentPlayerPosition,int move,GUI_Player player) {
         field[currentPlayerPosition%24].setCar(player, false);
         field[(currentPlayerPosition + move) % 24].setCar(player, true);
     }
-    public static void makeOwner(int currentField,Color playerColor){// Color from player
+    public void makeOwner(int currentField,Color playerColor){// Color from player
         GUI_Ownable t = (GUI_Ownable)field[currentField];
         t.setBorder(playerColor);
     }
-    public static Boolean isFieldOwnebel(int playerPosition){
+    public Boolean isFieldOwnebel(int playerPosition){
         if(field[playerPosition] instanceof GUI_Ownable){
             return true;
         }
         else{return false;}
     }
-    public static void showChanceCard(String text){
+    public void showChanceCard(String text){
         gui.displayChanceCard(text);
     }
-    public static void updatePlayerBal(int bal, GUI_Player player){
+    public void updatePlayerBal(int bal, GUI_Player player){
         player.setBalance(bal);
     }
 
