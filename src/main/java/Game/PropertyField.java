@@ -5,13 +5,17 @@ public class PropertyField extends Field
     private int price;
     private int rent;
     private boolean isPropertyBought;
+    Field partner;
+    private Player owner;
 
-    public PropertyField(int positionID, String colorID, String name, int price, int rent)
+    public PropertyField(int positionID, String colorID, String name, int price, int rent, Field partner)
     {
         super(positionID, colorID, name);
         this.price = price;
         this.rent = rent;
         this.isPropertyBought = false;
+        this.partner = partner;
+        Player owner;
     }
 
     public int getPrice()
@@ -34,4 +38,28 @@ public class PropertyField extends Field
     {
         return name;
     }
+    public Field getPartner()
+    {
+        return partner;
+    }
+    public void setOwner(Player currentPlayer)
+    {
+        owner = currentPlayer;
+    }
+    public Player getOwner()
+    {
+        return owner;
+    }
+    public void payRent(Account accountForCurrentPlayer)
+    {
+        accountForCurrentPlayer.setBalance(-rent);
+    }
+    public boolean isPairBought(PropertyField field)
+    {
+        if(field.getOwner().equals(field.getPartner())==true)
+            return true;
+        else
+            return false;
+    }
+
 }
