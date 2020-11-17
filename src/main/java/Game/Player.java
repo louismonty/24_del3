@@ -49,29 +49,18 @@ public class Player {
         this.playerPosition = playerPosition;
     }
 
-    //playerId Getter
-    public int getPlayerId() {
-        return playerId;
-    }
-
-    //playerId Setter
-    public void setPlayerId(int playerId) {
-        this.playerId = playerId;
-    }
 
     //Class attributes
     private String playerName;
     private int playerAge = 0;
     private Account playerAccount;
     private int playerPosition;
-    private int playerId;
-    //public GUI playerTexture;
+    public String playerColor;
 
     //Class constructor for the Player class
-    public Player(String playerName, int playerAge, int playerId, Account playerAccount /*, GUI playerTexture*/)
+    public Player(String playerName, int playerAge, Account playerAccount, String playerColor)
     {
-        //this.playerTexture = playerTexture;
-        this.playerId = playerId;
+        this.playerColor = playerColor;
         this.playerPosition = 0;
         this.playerAccount = playerAccount;
         this.playerName = playerName;
