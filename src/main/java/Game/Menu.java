@@ -22,6 +22,7 @@ public class Menu {
                 System.out.println("you created 2 players!");
                 SetupPlayer1();
                 SetupPlayer2();
+                playerController.setAmountOfPlayers(2);
                 break;
 
             case 3:
@@ -30,6 +31,7 @@ public class Menu {
                 SetupPlayer1();
                 SetupPlayer2();
                 SetupPlayer3();
+                playerController.setAmountOfPlayers(3);
                 break;
 
             case 4:
@@ -39,6 +41,7 @@ public class Menu {
                 SetupPlayer2();
                 SetupPlayer3();
                 SetupPlayer4();
+                playerController.setAmountOfPlayers(4);
                 break;
             default:
                 System.out.println("ERROR NO PLAYERS ADDED!");
