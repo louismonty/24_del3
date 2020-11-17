@@ -14,29 +14,29 @@ public class ChanceCard
         chanceCardID = id;
         chanceCardName = name;
     }
-    public void dogCard()
+    public void blackPlayerCard(Player player1)
     {
         player1.setHasChanceCard(true);
     }
 
-    public void shipCard()
+    public void bluePlayerCard(Player player2)
     {
         player2.setHasChanceCard(true);
     }
 
-    public void catCard()
+    public void redPlayerCard(Player player3)
     {
         player3.setHasChanceCard(true);
     }
 
-    public void carCard()
+    public void greenPlayerCard(Player player4)
     {
         player4.setHasChanceCard(true);
     }
 
-    public void startCard()
+    public void startCard(Player currentPlayer)
     {
-        getCurrentPlayer().setPosition(0);
+        currentPlayer.getCurrentPlayer().setPosition(0);
         getCurrentPlayer().AddBalance(gameboard[0].getStartBonus());
     }
 
