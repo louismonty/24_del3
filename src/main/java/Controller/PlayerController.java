@@ -64,20 +64,11 @@ public class PlayerController {
         return currentPlayer;
     }
 
-    public int getAmountOfPlayers() {
-        return amountOfPlayers;
-    }
-
-    public void setAmountOfPlayers(int amountOfPlayers) {
-        this.amountOfPlayers = amountOfPlayers;
-    }
-
     private int currentPlayer = 0;
-    private int amountOfPlayers;
 
     public void NextPlayer()
     {
-        currentPlayer = (currentPlayer + 1)% (amountOfPlayers);
+        currentPlayer = (currentPlayer + 1)% (playerArray.length);
     }
 
     public void Make2Players()
