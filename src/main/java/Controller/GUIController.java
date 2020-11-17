@@ -1,5 +1,6 @@
 package Controller;
 
+import Game.Player;
 import gui_fields.*;
 import gui_main.GUI;
 
@@ -35,10 +36,10 @@ public class GUIController {
         return fields;
     }
 
-    public GUI_Player[] createplayer(String[] names, int startbalance){
-        GUI_Player[] players = new GUI_Player[names.length];
-        for(int i = 0;i<names.length;i++ ) {
-            players[i] = new GUI_Player(names[i],startbalance);
+    public GUI_Player[] createplayer(Player[] currentplayer){
+        GUI_Player[] players = new GUI_Player[currentplayer.length];
+        for(int i = 0;i<currentplayer.length;i++ ) {
+            players[i] = new GUI_Player(currentplayer[i].getPlayerName(),currentplayer[i].getPlayerAccount().getBalance());
             gui.addPlayer(players[i]);
         }
         return players;
@@ -97,6 +98,12 @@ public class GUIController {
         gui.displayChanceCard(text);
     }
     public void updatePlayerBal(int bal, GUI_Player player){
+        player.setBalance(bal);
+    }
+    public boolean isInstanceOfField(int currentposition){
+        return (field[currentposition] instanceof GUI_Street);
+    }
+    public void changeBalce(int bal ,GUI_Player player){
         player.setBalance(bal);
     }
 
