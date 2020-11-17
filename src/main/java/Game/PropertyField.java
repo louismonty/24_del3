@@ -30,6 +30,7 @@ public class PropertyField extends Field
     {
         return isPropertyBought;
     }
+    public Player getOwner(){return owner;}
     public void setIsPropertyBought(boolean isBought)
     {
         isPropertyBought = isBought;
@@ -44,7 +45,7 @@ public class PropertyField extends Field
     }
     public void payRent(Player currentPlayer)
     {
-        currentPlayer.setBalance(-rent);
+        currentPlayer.addBalance(-rent);
     }
 
 }

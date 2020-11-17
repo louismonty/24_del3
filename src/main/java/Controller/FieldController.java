@@ -62,4 +62,7 @@ public class FieldController
         chanceCardDeck[16] = new ChanceCard(16, "chance FreeRed");
         chanceCardDeck[17] = new ChanceCard(17, "chanceSkaterparken");
     }
+    public Field[] getGameboard(){
+        return gameboard;
+    }
 }

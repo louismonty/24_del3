@@ -31,6 +31,16 @@ public static void gameloop(){
         GC.showDice(roll);
         newPlayerPosition = (currentPlayer.getPlayerPosition()+roll)%24;
         GC.movePlayer(currentPlayer.getPlayerPosition(),roll,GuiPlayers[currentPlayer.getPlayerId()]);
+        currentPlayer.setPlayerPosition(newPlayerPosition);
+        if(GC.isInstanceOfField(currentPlayer.getPlayerPosition())){
+            rl.propertyField(FC,currentPlayer,GC,GuiPlayers[currentPlayer.getPlayerId()]);
+        }
+        GuiPlayers[currentPlayer.getPlayerId()].setBalance(currentPlayer.getPlayerAccount().getBalance());
+        if(currentPlayer.getPlayerAccount().getBalance() <0){
+            GC.showMessege(currentPlayer.getPlayerName()+"  lost");
+            isGameRunning = false;
+        }
+        PC.NextPlayer();
 
 
     }

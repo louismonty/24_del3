@@ -19,7 +19,7 @@ public class ChanceCard
     }
 
  */
-
+/*
     public void startCard()
     {
         StartField.addStartBonus();
@@ -37,6 +37,6 @@ public class ChanceCard
             fieldsToMove = chanceScan.nextInt();
         }
         newPlayerPosition(fieldsToMove);
-    }
+    }*/
 
 }
