@@ -8,7 +8,7 @@ public class Menu {
     PlayerController playerController = new PlayerController();
 
 
-    public void AddPlayer()
+    public Player[] AddPlayer()
     {
 
         System.out.println("Please enter the amount of players from 2-4");
@@ -44,6 +44,7 @@ public class Menu {
                 System.out.println("ERROR NO PLAYERS ADDED!");
         }
         scan.close();
+        return playerController.getPlayerArray();
     }
     public void SetupPlayer1()
     {

@@ -49,6 +49,12 @@ public class Player {
         this.playerPosition = playerPosition;
     }
 
+    public void addBalance(int bal){
+        this.playerAccount.AddBalance((this.playerAccount.getBalance()+bal));
+    }
+    public int getPlayerId(){
+        return this.playerId;
+    }
 
     //Class attributes
     private String playerName;
@@ -56,14 +62,16 @@ public class Player {
     private Account playerAccount;
     private int playerPosition;
     public String playerColor;
+    int playerId;
 
     //Class constructor for the Player class
-    public Player(String playerName, int playerAge, Account playerAccount, String playerColor)
+    public Player(String playerName, int playerAge, Account playerAccount, String playerColor,int playerId)
     {
         this.playerColor = playerColor;
         this.playerPosition = 0;
         this.playerAccount = playerAccount;
         this.playerName = playerName;
         this.playerAge = playerAge;
+        this.playerId= playerId;
     }
 }

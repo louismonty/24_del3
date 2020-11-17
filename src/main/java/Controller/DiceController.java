@@ -11,7 +11,7 @@ public class DiceController {
      * rolls the 2 dice
      * to get value use DiceValue()
      */
-    public static void diceRoll(){
+    public void diceRoll(){
         dice1.roll();
     }
     public int diceValue(){
