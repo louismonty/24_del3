@@ -8,7 +8,7 @@ import java.awt.*;
 public class GUIController {
     private static GUI_Field[] createFields() {
         GUI_Field[] fields = new GUI_Field[24];
-        fields[0] = new GUI_Start("Start", "Modtag: 2 M", "Modtag kr. 2M,-\nnÃ¥r de passerer start", Color.RED, Color.BLACK);
+        fields[0] = new GUI_Start("Start", "Modtag: 2 M", "Modtag kr. 2M,-\nnår de passerer start", Color.RED, Color.BLACK);
         fields[1] = new GUI_Street("Burgerbaren", "Pris:  1M", "Burgerbaren servere nogle mums burgere" , "Leje:  1M", new Color(255,165,0), Color.BLACK);
         fields[2] = new GUI_Street("Pizzahuset", "Pris:  1M", "Pizzahuset" , "Leje:  1M", new Color(255,165,0), Color.BLACK);
         fields[3] = new GUI_Chance("?", "Prøv lykken", "Ta' et chancekort.", new Color(204, 204, 204), Color.BLACK);
@@ -54,6 +54,9 @@ public class GUIController {
     public static void showDice(int dice){
         gui.setDie(dice);
     }
+    public static void oneButton(String text,String button1){
+        gui.getUserButtonPressed(text,button1);
+    }
     public static String twoButtons(String text,String button1,String button2){
         return gui.getUserButtonPressed(text,button1,button2);
     }
@@ -92,6 +95,9 @@ public class GUIController {
     }
     public static void showChanceCard(String text){
         gui.displayChanceCard(text);
+    }
+    public static void updatePlayerBal(int bal, GUI_Player player){
+        player.setBalance(bal);
     }
 
 }
