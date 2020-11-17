@@ -1,5 +1,7 @@
 package Game;
 
+import java.awt.*;
+
 public class Player {
     //playerName Getter
     public String getPlayerName()
@@ -48,6 +50,7 @@ public class Player {
     {
         this.playerPosition = playerPosition;
     }
+    public Color getPlayerColor(){return playerColor;}
 
     public void addBalance(int bal){
         this.playerAccount.AddBalance((this.playerAccount.getBalance()+bal));
@@ -61,11 +64,11 @@ public class Player {
     private int playerAge = 0;
     private Account playerAccount;
     private int playerPosition;
-    public String playerColor;
+    public Color playerColor;
     int playerId;
 
     //Class constructor for the Player class
-    public Player(String playerName, int playerAge, Account playerAccount, String playerColor,int playerId)
+    public Player(String playerName, int playerAge, Account playerAccount, Color playerColor, int playerId)
     {
         this.playerColor = playerColor;
         this.playerPosition = 0;

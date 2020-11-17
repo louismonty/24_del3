@@ -38,8 +38,12 @@ public class GUIController {
 
     public GUI_Player[] createplayer(Player[] currentplayer){
         GUI_Player[] players = new GUI_Player[currentplayer.length];
+        GUI_Car[] cars =new GUI_Car[4];
+        String[] types = {"CAR","RACECAR","UFO","TRACTOR"};
         for(int i = 0;i<currentplayer.length;i++ ) {
-            players[i] = new GUI_Player(currentplayer[i].getPlayerName(),currentplayer[i].getPlayerAccount().getBalance());
+            cars[i] = new GUI_Car(currentplayer[i].getPlayerColor(), Color.BLACK, GUI_Car.Type.getTypeFromString(types[i]), GUI_Car.Pattern.HORIZONTAL_GRADIANT);
+            players[i] = new GUI_Player(currentplayer[i].getPlayerName(),currentplayer[i].getPlayerAccount().getBalance(),cars[i]);
+
             gui.addPlayer(players[i]);
         }
         return players;
