@@ -62,5 +62,7 @@ public class PropertyField extends Field
         else
             return false;
     }
+    public void landOnField()
+    {}
 
 }
