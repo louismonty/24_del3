@@ -13,4 +13,6 @@ public class JailField extends Field
     {
         return name;
     }
+    public void landOnField()
+    {}
 }
