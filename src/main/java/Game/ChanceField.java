@@ -10,4 +10,6 @@ public class ChanceField extends Field
     {
         return name;
     }
+    public void landOnField()
+    {}
 }
