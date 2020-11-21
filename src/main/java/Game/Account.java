@@ -24,13 +24,13 @@ public class Account {
     }
 
     //Add to Balance method
-    public int AddBalance(int addition)
+    public int addBalance(int addition)
     {
         return balance += addition;
     }
 
     //Subtract from Balance method
-    public int SubtractBalance(int subtraction)
+    public int subtractBalance(int subtraction)
     {
         return balance -= subtraction;
     }
