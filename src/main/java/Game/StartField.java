@@ -16,4 +16,6 @@ public class StartField extends Field
     {
         return name;
     }
+    public void landOnField()
+    {}
 }
