@@ -20,7 +20,11 @@ public class JailField extends Field
     public void goToJail(Player currentPlayer)
     {
         currentPlayer.setPlayerPosition(6);
-        if(currentPlayer.getHasGetOutOfJailCard()==false)
+        if(currentPlayer.getHasGetOutOfJailCard()==true)
+        {
+            currentPlayer.setHasGetOutOfJailCard(false);
+        }
+        else
         {
             currentPlayer.getPlayerAccount().subtractBalance(1);
         }
