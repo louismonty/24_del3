@@ -6,6 +6,8 @@ import gui_main.GUI;
 
 import java.awt.*;
 
+
+
 public class GUIController {
     private GUI_Field[] createFields() {
         GUI_Field[] fields = new GUI_Field[24];
@@ -43,13 +45,15 @@ public class GUIController {
         for(int i = 0;i<currentplayer.length;i++ ) {
             cars[i] = new GUI_Car(currentplayer[i].getPlayerColor(), Color.BLACK, GUI_Car.Type.getTypeFromString(types[i]), GUI_Car.Pattern.HORIZONTAL_GRADIANT);
             players[i] = new GUI_Player(currentplayer[i].getPlayerName(),currentplayer[i].getPlayerAccount().getBalance(),cars[i]);
+        }
 
+        for(int i = 0;i<players.length;i++) {
             gui.addPlayer(players[i]);
         }
         return players;
     }
-
-    private GUI gui = new GUI(createFields());
+    //create gameboard
+    GUI gui = new GUI(createFields());
 
     public GUI_Field field[] = gui.getFields();
 
