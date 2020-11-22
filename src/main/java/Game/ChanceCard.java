@@ -143,5 +143,12 @@ public class ChanceCard
     {
         currentPlayer.setHasGetOutOfJailCard(true);
     }
-
+    public void birthdayCard(Player currentPlayer, Player[] players)
+    {
+        for(Player p : players)
+        {
+            currentPlayer.getPlayerAccount().addBalance(1);
+            p.getPlayerAccount().subtractBalance(1);
+        }
+    }
 }
