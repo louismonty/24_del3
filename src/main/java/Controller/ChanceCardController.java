@@ -2,6 +2,8 @@ package Controller;
 
 import Game.ChanceCard;
 
+import java.util.Random;
+
 public class ChanceCardController
 {
     private ChanceCard chanceCardDeck[] = new ChanceCard[18];
@@ -25,5 +27,36 @@ public class ChanceCardController
         chanceCardDeck[15] = new ChanceCard(15, "chanceHomework");
         chanceCardDeck[16] = new ChanceCard(16, "chance FreeRed");
         chanceCardDeck[17] = new ChanceCard(17, "chanceSkaterparken");
+    }
+    public ChanceCard drawChanceCard()
+    {
+        for(int i = 0; i<=chanceCardDeck.length; i++)
+        {
+            if(i==chanceCardDeck.length-1)
+            {
+                chanceCardDeck[i] = chanceCardDeck[0];
+            }
+            else
+            chanceCardDeck[i] = chanceCardDeck[i+1];
+        }
+        return chanceCardDeck[0];
+    }
+
+    /**
+     * method copied from https://www.geeksforgeeks.org/shuffle-a-deck-of-cards-3/
+     */
+    public void shuffleChanceCardDeck()
+    {
+        Random random = new Random();
+
+        for (int i = 0; i <= chanceCardDeck.length; i++) {
+
+            int r = i + random.nextInt((chanceCardDeck.length - 1) - i);
+
+            ChanceCard temp = chanceCardDeck[r];
+            chanceCardDeck[r] = chanceCardDeck[i];
+            chanceCardDeck[i] = temp;
+        }
+        random=null;
     }
 }
