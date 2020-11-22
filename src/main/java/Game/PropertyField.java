@@ -54,10 +54,18 @@ public class PropertyField extends Field
     {
         return owner;
     }
-    public void payRent(Account accountForCurrentPlayer, Account ownerOfField)
+    public void payRent(PropertyField field, Player currentPlayer, Player ownerOfField)
     {
-        accountForCurrentPlayer.subtractBalance(-rent);
-        ownerOfField.addBalance(rent);
+        if(isPairBought(field)==true)
+        {
+            currentPlayer.getPlayerAccount().subtractBalance(rent * 2);
+            ownerOfField.getPlayerAccount().addBalance(rent * 2);
+        }
+        else
+        {
+            currentPlayer.getPlayerAccount().subtractBalance(rent);
+            ownerOfField.getPlayerAccount().addBalance(rent);
+        }
     }
     public boolean isPairBought(PropertyField field)
     {
