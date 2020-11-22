@@ -86,7 +86,7 @@ public class PropertyField extends Field
             cf.getOwner().getPlayerAccount().setBalance(cf.getOwner().getPlayerAccount().getBalance()+cf.getRent());
             GC.updatePlayerBal(cf.getOwner().getPlayerAccount().getBalance(),PlayerArray[cf.getOwner().getPlayerId()]);
         }
-    })
+    }
     {}
 
 }
