@@ -1,4 +1,5 @@
 package Game;
+import Controller.ChanceCardController;
 import Controller.GUIController;
 
 public class ChanceCard
@@ -46,7 +47,7 @@ public class ChanceCard
         }
         else
         {
-            field.payRent(player.getPlayerAccount());
+            field.payRent(player.getPlayerAccount(), field.getOwner().getPlayerAccount());
         }
     }
     public void tooMuchCandyCard(Player currentPlayer)
@@ -138,5 +139,24 @@ public class ChanceCard
             currentPlayer.setPlayerPosition(23);
         }
         checkIfPropertyIsBought(currentPlayer, currentField);
+    }
+    public void birthdayCard(Player currentPlayer, Player[] players)
+    {
+        for(Player p: players)
+        {
+            currentPlayer.getPlayerAccount().addBalance(1);
+            p.getPlayerAccount().subtractBalance(1);
+        }
+    }
+    public void moveOneOrDrawChanceCardCard(Player currentPlayer, GUIController GUIController, ChanceCardController chanceCardController)
+    {
+        if(GUIController.twoButtons("Vælg en af to muligheder: ", "Ryk 1 felt frem", "Træk et nyt chance kort").equals("Ryk 1 felt frem") ==true)
+        {
+            currentPlayer.setPlayerPosition(currentPlayer.getPlayerPosition()+1);
+        }
+        else
+        {
+            chanceCardController.drawChanceCard();
+        }
     }
 }
