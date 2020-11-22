@@ -1,11 +1,9 @@
 package Controller;
-import java.awt.*;
-import java.awt.color.*;
 
 import Game.Account;
 import Game.Player;
 
-
+import java.awt.*;
 
 public class PlayerController {
 
@@ -77,23 +75,23 @@ public class PlayerController {
 
     public void Make2Players()
     {
-        player1 = new Player("UNKNOWN", 0, new Account(20), Color.red,0);
-        player2 = new Player("UNKNOWN", 0, new Account(20), Color.BLUE,1);
+        player1 = new Player("UNKNOWN", 0, new Account(1), Color.black,1);
+        player2 = new Player("UNKNOWN", 0, new Account(1), Color.blue,2);
         playerArray = new Player[]{player1, player2};
     }
     public void Make3Players()
     {
-        player1 = new Player("UNKNOWN", 0, new Account(18), Color.red,0);
-        player2 = new Player("UNKNOWN", 0, new Account(18), Color.BLUE,1);
-        player3 = new Player("UNKNOWN", 0, new Account(18), Color.GREEN,2);
+        player1 = new Player("UNKNOWN", 0, new Account(1), Color.black,1);
+        player2 = new Player("UNKNOWN", 0, new Account(1), Color.blue,2);
+        player3 = new Player("UNKNOWN", 0, new Account(1), Color.red,3);
         playerArray = new Player[]{player1, player2, player3};
     }
     public void Make4Players()
     {
-        player1 = new Player("UNKNOWN", 0, new Account(16), Color.red,0);
-        player2 = new Player("UNKNOWN", 0, new Account(16), Color.BLUE,1);
-        player3 = new Player("UNKNOWN", 0, new Account(16), Color.GREEN,2);
-        player4 = new Player("UNKNOWN", 0, new Account(16), Color.WHITE,3);
+        player1 = new Player("UNKNOWN", 0, new Account(1), Color.black,1);
+        player2 = new Player("UNKNOWN", 0, new Account(1), Color.blue,2);
+        player3 = new Player("UNKNOWN", 0, new Account(1), Color.red,3);
+        player4 = new Player("UNKNOWN", 0, new Account(1), Color.green,4);
         playerArray = new Player[]{player1, player2, player3, player4};
     }
 }

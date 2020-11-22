@@ -50,13 +50,25 @@ public class Player {
     {
         this.playerPosition = playerPosition;
     }
-    public Color getPlayerColor(){return playerColor;}
 
-    public void addBalance(int bal){
-        this.playerAccount.AddBalance((this.playerAccount.getBalance()+bal));
+    public void setHasChanceCard(boolean hasChanceCard)
+    {
+        this.hasChanceCard = hasChanceCard;
     }
-    public int getPlayerId(){
-        return this.playerId;
+    public void setHasGetOutOfJailCard(boolean hasGetOutOfJailCard)
+    {
+        this.hasGetOutOfJailCard = hasGetOutOfJailCard;
+    }
+
+    public int getPlayerId(){return this.playerId;}
+
+    public boolean getHasChanceCard()
+    {
+        return hasChanceCard;
+    }
+    public boolean getHasGetOutOfJailCard()
+    {
+        return hasGetOutOfJailCard;
     }
 
     //Class attributes
@@ -64,17 +76,23 @@ public class Player {
     private int playerAge = 0;
     private Account playerAccount;
     private int playerPosition;
-    public Color playerColor;
-    int playerId;
+    private Color playerColor;
+    private int playerId;
+    private boolean hasChanceCard;
+    private boolean hasGetOutOfJailCard;
+
 
     //Class constructor for the Player class
-    public Player(String playerName, int playerAge, Account playerAccount, Color playerColor, int playerId)
+    public Player(String playerName, int playerAge, Account playerAccount, Color playerColor,int playerId)
     {
         this.playerColor = playerColor;
         this.playerPosition = 0;
         this.playerAccount = playerAccount;
         this.playerName = playerName;
         this.playerAge = playerAge;
-        this.playerId= playerId;
+        hasChanceCard = false;
+        hasGetOutOfJailCard = false;
+        this.playerColor = playerColor;
+        this.playerId = playerId;
     }
 }
