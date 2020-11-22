@@ -1,5 +1,6 @@
 package Game;
 import Controller.ChanceCardController;
+import Controller.FieldController;
 import Controller.GUIController;
 
 public class ChanceCard
@@ -47,7 +48,7 @@ public class ChanceCard
         }
         else
         {
-            field.payRent(player.getPlayerAccount(), field.getOwner().getPlayerAccount());
+            field.payRent(field, player, field.getOwner());
         }
     }
     public void tooMuchCandyCard(Player currentPlayer)
@@ -62,39 +63,39 @@ public class ChanceCard
     {
         currentPlayer.getPlayerAccount().addBalance(2);
     }
-    public void skaterparkenCard(Player currentPlayer, PropertyField field)
+    public void skaterparkenCard(Player currentPlayer, FieldController FC)
     {
         currentPlayer.setPlayerPosition(10);
-        checkIfPropertyIsBought(currentPlayer, field);
+        checkIfPropertyIsBought(currentPlayer, (PropertyField)FC.getGameboard()[currentPlayer.getPlayerPosition()]);
     }
-    public void freeOrangeCard(Player currentPlayer, PropertyField currentField, GUIController GUIController)
+    public void freeOrangeCard(Player currentPlayer, FieldController FC, GUIController GUIController)
     {
         if(GUIController.twoButtons("Gratis felt! Ryk frem til et orange felt. " +
                 "\nHvis det er ledigt, får du det gratis! " +
                 "\nEllers skal du betale leje til ejeren", "Skaterparken", "Swimmingpoolen").equals("Skaterparken") ==true)
             currentPlayer.setPlayerPosition(10);
         else currentPlayer.setPlayerPosition(11);
-        checkIfPropertyIsBought(currentPlayer, currentField);
+        checkIfPropertyIsBought(currentPlayer, (PropertyField)FC.getGameboard()[currentPlayer.getPlayerPosition()]);
     }
-    public void freeLightBlueCard(Player currentPlayer, PropertyField currentField, GUIController GUIController)
+    public void freeLightBlueCard(Player currentPlayer, FieldController FC, GUIController GUIController)
     {
         if(GUIController.twoButtons("Gratis felt! Ryk frem til et lyseblåt felt. " +
                 "\nHvis det er ledigt, får du det gratis! " +
                 "\nEllers skal du betale leje til ejeren", "Slikbutikken", "Iskiosken").equals("Slikbutikken") ==true)
             currentPlayer.setPlayerPosition(4);
         else currentPlayer.setPlayerPosition(5);
-        checkIfPropertyIsBought(currentPlayer, currentField);
+        checkIfPropertyIsBought(currentPlayer, (PropertyField)FC.getGameboard()[currentPlayer.getPlayerPosition()]);
     }
-    public void freeRedCard(Player currentPlayer, PropertyField currentField, GUIController GUIController)
+    public void freeRedCard(Player currentPlayer, FieldController FC, GUIController GUIController)
     {
         if(GUIController.twoButtons("Gratis felt! Ryk frem til et rødt felt. " +
                 "\nHvis det er ledigt, får du det gratis! " +
                 "\nEllers skal du betale leje til ejeren", "Spillehallen", "Biografen").equals("Spillehallen") ==true)
             currentPlayer.setPlayerPosition(13);
         else currentPlayer.setPlayerPosition(14);
-        checkIfPropertyIsBought(currentPlayer, currentField);
+        checkIfPropertyIsBought(currentPlayer, (PropertyField)FC.getGameboard()[currentPlayer.getPlayerPosition()]);
     }
-    public void freeOrangeOrGreenCard(Player currentPlayer, PropertyField currentField, GUIController GUIController)
+    public void freeOrangeOrGreenCard(Player currentPlayer, FieldController FC, GUIController GUIController)
     {
         String button = GUIController.fourButtons("Gratis felt! Ryk frem til et orange eller grønt felt." +
                 "\nHvis det er ledigt, får du det gratis! " +
@@ -115,9 +116,9 @@ public class ChanceCard
         {
             currentPlayer.setPlayerPosition(20);
         }
-        checkIfPropertyIsBought(currentPlayer, currentField);
+        checkIfPropertyIsBought(currentPlayer, (PropertyField)FC.getGameboard()[currentPlayer.getPlayerPosition()]);
     }
-    public void freePinkOrBlueCard(Player currentPlayer, PropertyField currentField, GUIController GUIController)
+    public void freePinkOrBlueCard(Player currentPlayer, FieldController FC, GUIController GUIController)
     {
         String button = GUIController.fourButtons("Gratis felt! Ryk frem til et pink eller blåt felt." +
                 "\nHvis det er ledigt, får du det gratis! " +
@@ -138,7 +139,7 @@ public class ChanceCard
         {
             currentPlayer.setPlayerPosition(23);
         }
-        checkIfPropertyIsBought(currentPlayer, currentField);
+        checkIfPropertyIsBought(currentPlayer, (PropertyField)FC.getGameboard()[currentPlayer.getPlayerPosition()]);
     }
     public void birthdayCard(Player currentPlayer, Player[] players)
     {
