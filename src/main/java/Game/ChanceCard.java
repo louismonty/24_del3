@@ -159,4 +159,8 @@ public class ChanceCard
             chanceCardController.drawChanceCard();
         }
     }
+    public void getOutOfJailCard(Player currentPlayer)
+    {
+        currentPlayer.setHasGetOutOfJailCard(true);
+    }
 }
