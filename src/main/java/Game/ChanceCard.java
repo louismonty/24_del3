@@ -139,4 +139,9 @@ public class ChanceCard
         }
         checkIfPropertyIsBought(currentPlayer, currentField);
     }
+    public void getOutOfJailCard(Player currentPlayer)
+    {
+        currentPlayer.setHasGetOutOfJailCard(true);
+    }
+
 }
