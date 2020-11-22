@@ -49,6 +49,15 @@ public class Player {
         this.playerPosition = playerPosition;
     }
 
+    public void setHasChanceCard(boolean hasChanceCard)
+    {
+        this.hasChanceCard = hasChanceCard;
+    }
+
+    public boolean getHasChanceCard()
+    {
+        return hasChanceCard;
+    }
 
     //Class attributes
     private String playerName;
@@ -56,6 +65,7 @@ public class Player {
     private Account playerAccount;
     private int playerPosition;
     public String playerColor;
+    private boolean hasChanceCard;
 
     //Class constructor for the Player class
     public Player(String playerName, int playerAge, Account playerAccount, String playerColor)
@@ -65,5 +75,6 @@ public class Player {
         this.playerAccount = playerAccount;
         this.playerName = playerName;
         this.playerAge = playerAge;
+        hasChanceCard = false;
     }
 }
