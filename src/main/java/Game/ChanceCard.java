@@ -13,6 +13,7 @@ public class ChanceCard
         chanceCardID = id;
         chanceCardName = name;
     }
+    public int getChanceCardID(){return this.chanceCardID;}
     public void blackPlayerCard(Player player1)
     {
         player1.setHasChanceCard(true);
