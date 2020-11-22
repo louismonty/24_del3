@@ -54,10 +54,18 @@ public class PropertyField extends Field
     {
         return owner;
     }
-    public void payRent(Account accountForCurrentPlayer, Account ownerOfField)
+    public void payRent(PropertyField field, Player currentPlayer, Player ownerOfField)
     {
-        accountForCurrentPlayer.subtractBalance(-rent);
-        ownerOfField.addBalance(rent);
+        if(isPairBought(field)==true)
+        {
+            currentPlayer.getPlayerAccount().subtractBalance(rent * 2);
+            ownerOfField.getPlayerAccount().addBalance(rent * 2);
+        }
+        else
+        {
+            currentPlayer.getPlayerAccount().subtractBalance(rent);
+            ownerOfField.getPlayerAccount().addBalance(rent);
+        }
     }
     public boolean isPairBought(PropertyField field)
     {
@@ -66,7 +74,7 @@ public class PropertyField extends Field
         else
             return false;
     }
-    public void landOnField(FieldController FC, Player currentPlayer,Player[] Players, GUIController GC, GUI_Player player, GUI_Player[] PlayerArray){
+    public void landOnField(FieldController FC, Player currentPlayer, GUIController GC, GUI_Player player, GUI_Player[] PlayerArray){
         PropertyField cf =(PropertyField) FC.getGameboard()[currentPlayer.getPlayerPosition()];
         if(!cf.getIsPropertyBought()){
             GC.showMessege("du købte "+cf.getName());
