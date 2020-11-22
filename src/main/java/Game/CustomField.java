@@ -1,8 +1,10 @@
 package Game;
 
-public class ParkingField extends Field
+public class CustomField extends Field
 {
-    public ParkingField(int positionID, String colorID, String name)
+
+
+    public CustomField(int positionID, String colorID, String name)
     {
         super(positionID, colorID,name);
     }
@@ -12,4 +14,5 @@ public class ParkingField extends Field
     }
     public void landOnField()
     {}
+
 }
