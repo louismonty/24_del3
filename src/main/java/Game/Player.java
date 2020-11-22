@@ -1,5 +1,7 @@
 package Game;
 
+import java.awt.*;
+
 public class Player {
     //playerName Getter
     public String getPlayerName()
@@ -53,10 +55,21 @@ public class Player {
     {
         this.hasChanceCard = hasChanceCard;
     }
+    public void setHasGetOutOfJailCard(boolean hasGetOutOfJailCard)
+    {
+        this.hasGetOutOfJailCard = hasGetOutOfJailCard;
+    }
+
+    public int getPlayerId(){return this.playerId;}
+    public Color getPlayerColor(){return  this.playerColor;}
 
     public boolean getHasChanceCard()
     {
         return hasChanceCard;
+    }
+    public boolean getHasGetOutOfJailCard()
+    {
+        return hasGetOutOfJailCard;
     }
 
     //Class attributes
@@ -64,11 +77,14 @@ public class Player {
     private int playerAge = 0;
     private Account playerAccount;
     private int playerPosition;
-    public String playerColor;
+    private Color playerColor;
+    private int playerId;
     private boolean hasChanceCard;
+    private boolean hasGetOutOfJailCard;
+
 
     //Class constructor for the Player class
-    public Player(String playerName, int playerAge, Account playerAccount, String playerColor)
+    public Player(String playerName, int playerAge, Account playerAccount, Color playerColor,int playerId)
     {
         this.playerColor = playerColor;
         this.playerPosition = 0;
@@ -76,5 +92,8 @@ public class Player {
         this.playerName = playerName;
         this.playerAge = playerAge;
         hasChanceCard = false;
+        hasGetOutOfJailCard = false;
+        this.playerColor = playerColor;
+        this.playerId = playerId;
     }
 }

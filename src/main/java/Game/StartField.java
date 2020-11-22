@@ -1,5 +1,8 @@
 package Game;
 
+import Controller.FieldController;
+import Controller.GUIController;
+import gui_fields.GUI_Player;
 public class StartField extends Field
 {
     private int startBonus;
@@ -16,6 +19,6 @@ public class StartField extends Field
     {
         return name;
     }
-    public void landOnField()
+    public void landOnField(FieldController FC, Player currentPlayer, GUIController GC, GUI_Player player, GUI_Player[] PlayerArray)
     {}
 }
