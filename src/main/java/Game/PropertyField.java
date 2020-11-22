@@ -81,7 +81,7 @@ public class PropertyField extends Field
             //
         }
         else{
-            GC.showMessege("du skal betale penge til"+cf.getOwner());
+            GC.showMessege("du skal betale penge til"+cf.getOwner().getPlayerName());
             currentPlayer.getPlayerAccount().setBalance(currentPlayer.getPlayerAccount().getBalance()-cf.getPrice());
             cf.getOwner().getPlayerAccount().setBalance(cf.getOwner().getPlayerAccount().getBalance()+cf.getRent());
             GC.updatePlayerBal(cf.getOwner().getPlayerAccount().getBalance(),PlayerArray[cf.getOwner().getPlayerId()]);

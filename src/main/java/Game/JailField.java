@@ -20,11 +20,16 @@ public class JailField extends Field
     public void goToJail(Player currentPlayer)
     {
         currentPlayer.setPlayerPosition(6);
+        currentPlayer.setIsInJail(true);
         if(currentPlayer.getHasGetOutOfJailCard()==false)
         {
             currentPlayer.getPlayerAccount().subtractBalance(1);
         }
     }
     public void landOnField(FieldController FC, Player currentPlayer,Player[] Players, GUIController GC, GUI_Player player, GUI_Player[] PlayerArray)
-    {}
+    {
+        goToJail(currentPlayer);
+        GC.showMessege("du kommer i fængslet");
+        GC.movePlayer(18,12,player);
+    }
 }
