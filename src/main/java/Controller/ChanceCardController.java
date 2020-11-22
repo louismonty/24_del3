@@ -70,6 +70,8 @@ public class ChanceCardController
                 GC.showChanceCard("Giv dette kort til grøn spiller, og tag et chancekort mere." +
                         "\nGrøn spiller: På din næste tur skal du drøne frem til et hvilket som helst ledigt felt og købe det." +
                         "\nHvis der ikke er nogen ledige felter, skal du købe et fra en anden spiller!");
+                GC.showMessege("Træk et nyt chancekort");
+                drawChanceCard();
                 break;
             case 1:
                 currentChanceCard.startCard(currentPlayer,(StartField) FC.getGameboard()[0]);
@@ -93,6 +95,8 @@ public class ChanceCardController
                 GC.showChanceCard("Giv dette kort til blå spiller, og tag et chancekort mere." +
                         "\nBlå spiller: På din næste tur skal du drøne frem til et hvilket som helst ledigt felt og købe det." +
                         "\nHvis der ikke er nogen ledige felter, skal du købe et fra en anden spiller!");
+                GC.showMessege("Træk et nyt chancekort");
+                drawChanceCard();
                 break;
             case 6:
                 currentChanceCard.tooMuchCandyCard(currentPlayer);
@@ -123,12 +127,16 @@ public class ChanceCardController
                 GC.showChanceCard("Giv dette kort til rød spiller, og tag et chancekort mere." +
                         "\nRød spiller: På din næste tur skal du drøne frem til et hvilket som helst ledigt felt og købe det." +
                         "\nHvis der ikke er nogen ledige felter, skal du købe et fra en anden spiller!");
+                GC.showMessege("Træk et nyt chancekort");
+                drawChanceCard();
                 break;
             case 12:
                 currentChanceCard.blackPlayerCard(player[3]);
                 GC.showChanceCard("Giv dette kort til sort spiller, og tag et chancekort mere." +
                         "\nSort spiller: På din næste tur skal du drøne frem til et hvilket som helst ledigt felt og købe det." +
                         "\nHvis der ikke er nogen ledige felter, skal du købe et fra en anden spiller!");
+                GC.showMessege("Træk et nyt chancekort");
+                drawChanceCard();
                 break;
             case 13:
                 currentChanceCard.birthdayCard(currentPlayer,Player);
