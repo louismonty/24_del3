@@ -4,18 +4,11 @@ import Game.*;
 
 public class FieldController
 {
-    Field gameboard[] = new Field[24];
-    ChanceCard chanceCardDeck[] = new ChanceCard[18];
+    private Field gameboard[] = new Field[24];
+    private ChanceCard chanceCardDeck[] = new ChanceCard[18];
     public FieldController()
     {
 
-    }
-
-    /**
-     * Creates gameboard by making an array of fields inheriting the Field class.
-     */
-    public void createGameBoardFields()
-    {
         gameboard[0] = new StartField(0, "white", "Start");
         gameboard[1] = new PropertyField(1, "orange", "Burgerbaren", 1, 1, gameboard[2]);
         gameboard[2] = new PropertyField(2, "orange", "Pizzariaet", 1, 1, gameboard[1]);
@@ -40,9 +33,8 @@ public class FieldController
         gameboard[21] = new ChanceField(21, "white", "Chance");
         gameboard[22] = new PropertyField(22, "blue", "Vandlandet", 5, 5, gameboard[23]);
         gameboard[23] = new PropertyField(23, "blue", "Strandpromenaden", 5, 5, gameboard[22]);
-    }
-    public void createChanceCardDeck()
-    {
+
+
         chanceCardDeck[0] = new ChanceCard(0, "chanceCar");
         chanceCardDeck[1] = new ChanceCard(1, "chanceStart");
         chanceCardDeck[2] = new ChanceCard(2, "chanceMoveForward");
@@ -61,5 +53,9 @@ public class FieldController
         chanceCardDeck[15] = new ChanceCard(15, "chanceHomework");
         chanceCardDeck[16] = new ChanceCard(16, "chance FreeRed");
         chanceCardDeck[17] = new ChanceCard(17, "chanceSkaterparken");
+    }
+    public Field[] getGameboard()
+    {
+        return gameboard;
     }
 }
