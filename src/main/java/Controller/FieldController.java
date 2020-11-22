@@ -15,13 +15,13 @@ public class FieldController
         gameboard[3] = new ChanceField(3, "white", "Chance");
         gameboard[4] = new PropertyField(4, "lightblue", "Slikbutikken", 1, 1, gameboard[5]);
         gameboard[5] = new PropertyField(5, "lightblue", "Iskiosken", 1, 1, gameboard[4]);
-        gameboard[6] = new JailField(6, "white", "I fængsel");
+        gameboard[6] = new CustomField(6, "white", "I fængsel");
         gameboard[7] = new PropertyField(7, "pink", "Museet", 2, 2, gameboard[8]);
         gameboard[8] = new PropertyField(8, "pink", "Biblioteket", 2, 2, gameboard[7]);
         gameboard[9] = new ChanceField(9, "white", "Chance");
         gameboard[10] = new PropertyField(10, "gold", "Skaterparken", 2, 2, gameboard[11]);
         gameboard[11] = new PropertyField(11, "gold", "Swimmingpoolen", 2, 2, gameboard[10]);
-        gameboard[12] = new ParkingField(12, "white", "Parkering");
+        gameboard[12] = new CustomField(12, "white", "Parkering");
         gameboard[13] = new PropertyField(13, "red", "Spillehallen", 3, 3, gameboard[14]);
         gameboard[14] = new PropertyField(14, "red", "Biografen", 3, 3, gameboard[13]);
         gameboard[15] = new ChanceField(15, "white", "Chance");
