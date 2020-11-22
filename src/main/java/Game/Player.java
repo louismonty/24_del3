@@ -53,10 +53,18 @@ public class Player {
     {
         this.hasChanceCard = hasChanceCard;
     }
+    public void setHasGetOutOfJailCard(boolean hasGetOutOfJailCard)
+    {
+        this.hasGetOutOfJailCard = hasGetOutOfJailCard;
+    }
 
     public boolean getHasChanceCard()
     {
         return hasChanceCard;
+    }
+    public boolean getHasGetOutOfJailCard()
+    {
+        return hasGetOutOfJailCard;
     }
 
     //Class attributes
@@ -66,6 +74,7 @@ public class Player {
     private int playerPosition;
     public String playerColor;
     private boolean hasChanceCard;
+    private boolean hasGetOutOfJailCard;
 
     //Class constructor for the Player class
     public Player(String playerName, int playerAge, Account playerAccount, String playerColor)
@@ -76,5 +85,6 @@ public class Player {
         this.playerName = playerName;
         this.playerAge = playerAge;
         hasChanceCard = false;
+        hasGetOutOfJailCard = false;
     }
 }
