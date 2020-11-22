@@ -77,7 +77,7 @@ public class GUIController {
         return input;
     }
 
-    public String intigerInput(String text){
+    public String stringInput(String text){
         return gui.getUserString(text);
     }
 
