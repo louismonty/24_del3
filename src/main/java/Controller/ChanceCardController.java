@@ -62,11 +62,11 @@ public class ChanceCardController
         }
         random=null;
     }
-    public void executeChanceCard(FieldController FC, Player currentPlayer, GUIController GC, GUI_Player player,
+    public void executeChanceCard(FieldController FC, Player currentPlayer,Player[] players, GUIController GC, GUI_Player player,
                                   GUI_Player[] PlayerArray, ChanceCard currentChanceCard){
         switch (currentChanceCard.getChanceCardID()) {
             case 0:
-                currentChanceCard.greenPlayerCard(Player[0]);
+                currentChanceCard.greenPlayerCard(players[0]);
                 GC.showChanceCard("Giv dette kort til grøn spiller, og tag et chancekort mere." +
                         "\nGrøn spiller: På din næste tur skal du drøne frem til et hvilket som helst ledigt felt og købe det." +
                         "\nHvis der ikke er nogen ledige felter, skal du købe et fra en anden spiller!");
@@ -91,7 +91,7 @@ public class ChanceCardController
                 GC.showChanceCard("Ryk 1 felt frem, eller tag et chancekort mere.");
                 break;
             case 5:
-                currentChanceCard.bluePlayerCard(Player[1]);
+                currentChanceCard.bluePlayerCard(players[1]);
                 GC.showChanceCard("Giv dette kort til blå spiller, og tag et chancekort mere." +
                         "\nBlå spiller: På din næste tur skal du drøne frem til et hvilket som helst ledigt felt og købe det." +
                         "\nHvis der ikke er nogen ledige felter, skal du købe et fra en anden spiller!");
@@ -123,7 +123,7 @@ public class ChanceCardController
                 GC.showChanceCard("Ryk frem til Standpromenaden.");
                 break;
             case 11:
-                currentChanceCard.redPlayerCard(Player[2]);
+                currentChanceCard.redPlayerCard(players[2]);
                 GC.showChanceCard("Giv dette kort til rød spiller, og tag et chancekort mere." +
                         "\nRød spiller: På din næste tur skal du drøne frem til et hvilket som helst ledigt felt og købe det." +
                         "\nHvis der ikke er nogen ledige felter, skal du købe et fra en anden spiller!");
@@ -131,7 +131,7 @@ public class ChanceCardController
                 drawChanceCard();
                 break;
             case 12:
-                currentChanceCard.blackPlayerCard(player[3]);
+                currentChanceCard.blackPlayerCard(players[3]);
                 GC.showChanceCard("Giv dette kort til sort spiller, og tag et chancekort mere." +
                         "\nSort spiller: På din næste tur skal du drøne frem til et hvilket som helst ledigt felt og købe det." +
                         "\nHvis der ikke er nogen ledige felter, skal du købe et fra en anden spiller!");
@@ -139,7 +139,7 @@ public class ChanceCardController
                 drawChanceCard();
                 break;
             case 13:
-                currentChanceCard.birthdayCard(currentPlayer,Player);
+                currentChanceCard.birthdayCard(currentPlayer,players);
                 GC.showChanceCard("Det er din fødselsdag! Alle giver dig 1M." +
                         "\nTillykke med fødselsdagen!");
                 break;
