@@ -60,6 +60,8 @@ public class Player {
         this.hasGetOutOfJailCard = hasGetOutOfJailCard;
     }
 
+    public int getPlayerId(){return this.playerId;}
+
     public boolean getHasChanceCard()
     {
         return hasChanceCard;
@@ -81,7 +83,7 @@ public class Player {
 
 
     //Class constructor for the Player class
-    public Player(String playerName, int playerAge, Account playerAccount, Color playercolor,int playerId)
+    public Player(String playerName, int playerAge, Account playerAccount, Color playerColor,int playerId)
     {
         this.playerColor = playerColor;
         this.playerPosition = 0;
@@ -90,7 +92,7 @@ public class Player {
         this.playerAge = playerAge;
         hasChanceCard = false;
         hasGetOutOfJailCard = false;
-        this.playerColor = playercolor;
+        this.playerColor = playerColor;
         this.playerId = playerId;
     }
 }
