@@ -1,6 +1,9 @@
 package Controller;
 
 import Game.ChanceCard;
+import Game.Player;
+import Game.StartField;
+import gui_fields.GUI_Player;
 
 import java.util.Random;
 
@@ -59,4 +62,46 @@ public class ChanceCardController
         }
         random=null;
     }
+    public void executeChanceCard(FieldController FC, Player currentPlayer, GUIController GC, GUI_Player player,
+                                  GUI_Player[] PlayerArray, ChanceCard currentChanceCard){
+        switch (currentChanceCard.getChanceCardID()) {
+            case 0:
+                currentChanceCard.greenPlayerCard(Player[0]);
+            case 1:
+                currentChanceCard.startCard(currentPlayer,(StartField) FC.getGameboard()[0]);
+            case 2:
+                currentChanceCard.fiveFieldsForwardCard(currentPlayer,GC);
+            case 3:
+                currentChanceCard.freeOrangeCard(currentPlayer,FC,GC);
+            case 4:
+                currentChanceCard.moveOneOrDrawChanceCardCard(currentPlayer,GC,this);
+            case 5:
+                currentChanceCard.bluePlayerCard(Player[1]);
+            case 6:
+                currentChanceCard.tooMuchCandyCard(currentPlayer);
+            case 7:
+                currentChanceCard.freeOrangeOrGreenCard(currentPlayer,FC,GC);
+            case 8:
+                currentChanceCard.freeLightBlueCard(currentPlayer,FC,GC);
+            case 9:
+                currentChanceCard
+            case 10:
+                currentChanceCard.strandpromenadenCard(currentPlayer);
+            case 11:
+                currentChanceCard.redPlayerCard(Player[2]);
+            case 12:
+                currentChanceCard.blackPlayerCard(player[3]);
+            case 13:
+                currentChanceCard.birthdayCard(currentPlayer,Player);
+            case 14:
+                currentChanceCard.freePinkOrBlueCard(currentPlayer,FC,GC);
+            case 15:
+                currentChanceCard.homeworkCard(currentPlayer);
+            case 16:
+                currentChanceCard.freeRedCard(currentPlayer,FC,GC);
+            case 17:
+                currentChanceCard.skaterparkenCard(currentPlayer,FC);
+
+        }
+        }
 }
