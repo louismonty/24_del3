@@ -13,6 +13,11 @@ public class JailField extends Field
     {
         return name;
     }
+    public void goToJail(Player currentPlayer)
+    {
+        currentPlayer.setPlayerPosition(6);
+        currentPlayer.getPlayerAccount().SubtractBalance(1);
+    }
     public void landOnField()
     {}
 }
