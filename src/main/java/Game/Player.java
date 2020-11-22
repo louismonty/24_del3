@@ -61,6 +61,7 @@ public class Player {
     }
 
     public int getPlayerId(){return this.playerId;}
+    public Color getPlayerColor(){return  this.playerColor;}
 
     public boolean getHasChanceCard()
     {
