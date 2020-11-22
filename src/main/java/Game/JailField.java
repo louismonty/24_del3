@@ -22,7 +22,7 @@ public class JailField extends Field
         currentPlayer.setPlayerPosition(6);
         if(currentPlayer.getHasGetOutOfJailCard()==false)
         {
-            currentPlayer.getPlayerAccount().SubtractBalance(1);
+            currentPlayer.getPlayerAccount().subtractBalance(1);
         }
     }
     public void landOnField(FieldController FC, Player currentPlayer, GUIController GC, GUI_Player player, GUI_Player[] PlayerArray)
