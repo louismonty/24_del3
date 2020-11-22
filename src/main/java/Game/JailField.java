@@ -1,5 +1,9 @@
 package Game;
 
+import Controller.FieldController;
+import Controller.GUIController;
+import gui_fields.GUI_Player;
+
 public class JailField extends Field
 {
     private int bail;
@@ -13,6 +17,14 @@ public class JailField extends Field
     {
         return name;
     }
-    public void landOnField()
+    public void goToJail(Player currentPlayer)
+    {
+        currentPlayer.setPlayerPosition(6);
+        if(currentPlayer.getHasGetOutOfJailCard()==false)
+        {
+            currentPlayer.getPlayerAccount().subtractBalance(1);
+        }
+    }
+    public void landOnField(FieldController FC, Player currentPlayer,Player[] Players, GUIController GC, GUI_Player player, GUI_Player[] PlayerArray)
     {}
 }
