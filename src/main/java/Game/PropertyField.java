@@ -38,13 +38,31 @@ public class PropertyField extends Field
     {
         return name;
     }
+    public Field getPartner()
+    {
+        return partner;
+    }
     public void setOwner(Player currentPlayer)
     {
         owner = currentPlayer;
     }
-    public void payRent(Player currentPlayer)
+    public Player getOwner()
     {
-        currentPlayer.setBalance(-rent);
+        return owner;
     }
+    public void payRent(Account accountForCurrentPlayer, Account ownerOfField)
+    {
+        accountForCurrentPlayer.subtractBalance(-rent);
+        ownerOfField.addBalance(rent);
+    }
+    public boolean isPairBought(PropertyField field)
+    {
+        if(field.getOwner().equals(field.getPartner())==true)
+            return true;
+        else
+            return false;
+    }
+    public void landOnField()
+    {}
 
 }

@@ -11,4 +11,5 @@ public abstract class Field
         this.colorID = colorID;
         this.name = name;
     }
+    public abstract void landOnField();
 }
