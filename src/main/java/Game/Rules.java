@@ -35,7 +35,7 @@ public class Rules {
             }
             else
             {
-                field.payRent(currentPlayer.getPlayerAccount());
+                field.payRent(field, currentPlayer, field.getOwner());
             }
         }
     }
