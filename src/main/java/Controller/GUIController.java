@@ -70,12 +70,17 @@ public class GUIController {
         int input;
         while(true){
             input = gui.getUserInteger(text,min,max);
-            if(min<input&& input>max){
+            if(min <= input&& input<=max){
                 break;
             }
         }
         return input;
     }
+
+    public String intigerInput(String text){
+        return gui.getUserString(text);
+    }
+
     public void placePlayer(int position, GUI_Player player){
         field[position].setCar(player,true);
     }
