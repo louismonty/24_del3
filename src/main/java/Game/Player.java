@@ -60,6 +60,7 @@ public class Player {
         this.hasGetOutOfJailCard = hasGetOutOfJailCard;
     }
     public boolean getIsInJail(){return this.isInJail;}
+    public void setIsInJail(boolean jail){ isInJail =jail;}
     public int getPlayerId(){return this.playerId;}
     public Color getPlayerColor(){return  this.playerColor;}
 
