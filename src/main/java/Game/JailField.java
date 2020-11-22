@@ -25,6 +25,6 @@ public class JailField extends Field
             currentPlayer.getPlayerAccount().subtractBalance(1);
         }
     }
-    public void landOnField(FieldController FC, Player currentPlayer, GUIController GC, GUI_Player player, GUI_Player[] PlayerArray)
+    public void landOnField(FieldController FC, Player currentPlayer,Player[] Players, GUIController GC, GUI_Player player, GUI_Player[] PlayerArray)
     {}
 }
