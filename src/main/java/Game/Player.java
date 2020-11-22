@@ -59,7 +59,7 @@ public class Player {
     {
         this.hasGetOutOfJailCard = hasGetOutOfJailCard;
     }
-
+    public boolean getIsInJail(){return this.isInJail;}
     public int getPlayerId(){return this.playerId;}
     public Color getPlayerColor(){return  this.playerColor;}
 
@@ -81,6 +81,7 @@ public class Player {
     private int playerId;
     private boolean hasChanceCard;
     private boolean hasGetOutOfJailCard;
+    private boolean isInJail;
 
 
     //Class constructor for the Player class
@@ -93,6 +94,7 @@ public class Player {
         this.playerAge = playerAge;
         hasChanceCard = false;
         hasGetOutOfJailCard = false;
+        isInJail = false;
         this.playerColor = playerColor;
         this.playerId = playerId;
     }
