@@ -3,6 +3,7 @@ package Controller;
 import Game.Account;
 import Game.Player;
 
+import java.awt.*;
 
 public class PlayerController {
 
@@ -27,7 +28,6 @@ public class PlayerController {
     public void setPlayer2(Player player) {
         this.player2 = player;
     }
-
 
     private Player player3;
     public Player getPlayer3()
@@ -62,25 +62,36 @@ public class PlayerController {
         this.playerArray = playerArray;
     }
 
+    public Player getCurrentPlayer() {
+        return playerArray[currentPlayer];
+    }
+
+    private int currentPlayer = 0;
+
+    public void NextPlayer()
+    {
+        currentPlayer = (currentPlayer + 1)% (playerArray.length);
+    }
+
     public void Make2Players()
     {
-        player1 = new Player("UNKNOWN", 0, new Account(1), "R:0, G:0, B:0 ");
-        player2 = new Player("UNKNOWN", 0, new Account(1), "R:0, G:0, B:255");
+        player1 = new Player("UNKNOWN", 0, new Account(1), Color.black,1);
+        player2 = new Player("UNKNOWN", 0, new Account(1), Color.blue,2);
         playerArray = new Player[]{player1, player2};
     }
     public void Make3Players()
     {
-        player1 = new Player("UNKNOWN", 0, new Account(1), "R:0, G:0, B:0 ");
-        player2 = new Player("UNKNOWN", 0, new Account(1), "R:0, G:0, B:255");
-        player3 = new Player("UNKNOWN", 0, new Account(1), "R:255, G:0, B:0");
+        player1 = new Player("UNKNOWN", 0, new Account(1), Color.black,1);
+        player2 = new Player("UNKNOWN", 0, new Account(1), Color.blue,2);
+        player3 = new Player("UNKNOWN", 0, new Account(1), Color.red,3);
         playerArray = new Player[]{player1, player2, player3};
     }
     public void Make4Players()
     {
-        player1 = new Player("UNKNOWN", 0, new Account(1), "R:0, G:0, B:0 ");
-        player2 = new Player("UNKNOWN", 0, new Account(1), "R:0, G:0, B:255");
-        player3 = new Player("UNKNOWN", 0, new Account(1), "R:255, G:0, B:0");
-        player4 = new Player("UNKNOWN", 0, new Account(1), "R:0, G:255, B:0");
+        player1 = new Player("UNKNOWN", 0, new Account(1), Color.black,1);
+        player2 = new Player("UNKNOWN", 0, new Account(1), Color.blue,2);
+        player3 = new Player("UNKNOWN", 0, new Account(1), Color.red,3);
+        player4 = new Player("UNKNOWN", 0, new Account(1), Color.green,4);
         playerArray = new Player[]{player1, player2, player3, player4};
     }
 }

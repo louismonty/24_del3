@@ -1,5 +1,9 @@
 package Game;
 
+import Controller.FieldController;
+import Controller.GUIController;
+import gui_fields.GUI_Player;
+
 public class PropertyField extends Field
 {
     private int price;
@@ -38,13 +42,51 @@ public class PropertyField extends Field
     {
         return name;
     }
+    public Field getPartner()
+    {
+        return partner;
+    }
     public void setOwner(Player currentPlayer)
     {
         owner = currentPlayer;
     }
-    public void payRent(Player currentPlayer)
+    public Player getOwner()
     {
-        currentPlayer.setBalance(-rent);
+        return owner;
     }
+    public void payRent(Account accountForCurrentPlayer, Account ownerOfField)
+    {
+        accountForCurrentPlayer.subtractBalance(-rent);
+        ownerOfField.addBalance(rent);
+    }
+    public boolean isPairBought(PropertyField field)
+    {
+        if(field.getOwner().equals(field.getPartner())==true)
+            return true;
+        else
+            return false;
+    }
+    public void landOnField(FieldController FC, Player currentPlayer, GUIController GC, GUI_Player player, GUI_Player[] PlayerArray){
+        PropertyField cf =(PropertyField) FC.getGameboard()[currentPlayer.getPlayerPosition()];
+        if(!cf.getIsPropertyBought()){
+            GC.showMessege("du købte "+cf.getName());
+            if( currentPlayer.getPlayerAccount().getBalance() > cf.getPrice()){
+                GC.makeOwner(currentPlayer.getPlayerPosition(),player.getPrimaryColor());
+                cf.setOwner(currentPlayer);
+                cf.setIsPropertyBought(true);
+                currentPlayer.getPlayerAccount().setBalance(currentPlayer.getPlayerAccount().getBalance()-cf.getPrice());
+            }
+        }
+        else if(cf.getOwner().equals(currentPlayer)) {
+            //
+        }
+        else{
+            GC.showMessege("du skal betale penge til"+cf.getOwner());
+            currentPlayer.getPlayerAccount().setBalance(currentPlayer.getPlayerAccount().getBalance()-cf.getPrice());
+            cf.getOwner().getPlayerAccount().setBalance(cf.getOwner().getPlayerAccount().getBalance()+cf.getRent());
+            GC.updatePlayerBal(cf.getOwner().getPlayerAccount().getBalance(),PlayerArray[cf.getOwner().getPlayerId()]);
+        }
+    }
+    {}
 
 }
