@@ -94,4 +94,30 @@ public class PlayerController {
         player4 = new Player("UNKNOWN", 0, new Account(16), Color.green,3);
         playerArray = new Player[]{player1, player2, player3, player4};
     }
+
+    public Player playerWithHighestBalance()
+    {
+        if ((player1.getPlayerAccount().getBalance() >= player2.getPlayerAccount().getBalance())
+                && (player1.getPlayerAccount().getBalance() >= player3.getPlayerAccount().getBalance())
+                && (player1.getPlayerAccount().getBalance() >= player4.getPlayerAccount().getBalance()))
+        {
+            return player1;
+        }
+
+        else if ((player2.getPlayerAccount().getBalance() >= player3.getPlayerAccount().getBalance())
+                && (player2.getPlayerAccount().getBalance() >= player4.getPlayerAccount().getBalance()))
+        {
+            return player2;
+        }
+
+        else if (player3.getPlayerAccount().getBalance() >= player4.getPlayerAccount().getBalance())
+        {
+            return player3;
+        }
+
+        else
+        {
+            return player4;
+        }
+    }
 }
