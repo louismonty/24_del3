@@ -2,6 +2,7 @@ package Game;
 
 import java.awt.*;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Player {
     //playerName Getter
@@ -18,7 +19,7 @@ public class Player {
 
     //playerAge Getter
 
-    public SimpleDateFormat getPlayerAge()
+    public double getPlayerAge()
     {
         return playerAge;
     }
@@ -75,17 +76,13 @@ public class Player {
         return hasGetOutOfJailCard;
     }
 
-    SimpleDateFormat playerAge;
-
-    {
-        playerAge = new SimpleDateFormat("yyyy-MM-dd");
-    }
 
     //Class attributes
     private String playerName;
     private Account playerAccount;
     private int playerPosition;
     private Color playerColor;
+    private double playerAge;
     private int playerId;
     private boolean hasChanceCard;
     private boolean hasGetOutOfJailCard;
@@ -93,7 +90,7 @@ public class Player {
 
 
     //Class constructor for the Player class
-    public Player(String playerName, SimpleDateFormat playerAge, Account playerAccount, Color playerColor, int playerId)
+    public Player(String playerName, double playerAge, Account playerAccount, Color playerColor, int playerId)
     {
         this.playerColor = playerColor;
         this.playerPosition = 0;
