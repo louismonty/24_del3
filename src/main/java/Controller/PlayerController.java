@@ -76,24 +76,24 @@ public class PlayerController {
 
     public void Make2Players()
     {
-        player1 = new Player("UNKNOWN", player1.getPlayerAge(), new Account(20), Color.black,0);
-        player2 = new Player("UNKNOWN", player2.getPlayerAge(), new Account(20), Color.blue,1);
+        player1 = new Player("UNKNOWN",19000101, new Account(20), Color.black,0);
+        player2 = new Player("UNKNOWN",19000101, new Account(20), Color.blue,1);
         playerArray = new Player[]{player1, player2};
     }
 
     public void Make3Players()
     {
-        player1 = new Player("UNKNOWN", player1.getPlayerAge(), new Account(18), Color.black,0);
-        player2 = new Player("UNKNOWN", player2.getPlayerAge(), new Account(18), Color.blue,1);
-        player3 = new Player("UNKNOWN", player3.getPlayerAge(), new Account(18), Color.red,2);
+        player1 = new Player("UNKNOWN", 19000101, new Account(18), Color.black,0);
+        player2 = new Player("UNKNOWN", 19000101, new Account(18), Color.blue,1);
+        player3 = new Player("UNKNOWN", 19000101, new Account(18), Color.red,2);
         playerArray = new Player[]{player1, player2, player3};
     }
     public void Make4Players()
     {
-        player1 = new Player("UNKNOWN", player1.getPlayerAge(), new Account(16), Color.black,0);
-        player2 = new Player("UNKNOWN", player2.getPlayerAge(), new Account(16), Color.blue,1);
-        player3 = new Player("UNKNOWN", player3.getPlayerAge(), new Account(16), Color.red,2);
-        player4 = new Player("UNKNOWN", player4.getPlayerAge(), new Account(16), Color.green,3);
+        player1 = new Player("UNKNOWN", 19000101, new Account(16), Color.black,0);
+        player2 = new Player("UNKNOWN", 19000101, new Account(16), Color.blue,1);
+        player3 = new Player("UNKNOWN", 19000101, new Account(16), Color.red,2);
+        player4 = new Player("UNKNOWN", 19000101, new Account(16), Color.green,3);
         playerArray = new Player[]{player1, player2, player3, player4};
     }
 
