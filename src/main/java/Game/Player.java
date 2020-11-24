@@ -1,6 +1,8 @@
 package Game;
 
 import java.awt.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Player {
     //playerName Getter
@@ -16,13 +18,14 @@ public class Player {
     }
 
     //playerAge Getter
-    public int getPlayerAge()
+
+    public double getPlayerAge()
     {
         return playerAge;
     }
 
     //playerAge Setter
-    public void setPlayerAge(int playerAge)
+    public void setPlayerAge(double playerAge)
     {
         this.playerAge = playerAge;
     }
@@ -73,12 +76,13 @@ public class Player {
         return hasGetOutOfJailCard;
     }
 
+
     //Class attributes
     private String playerName;
-    private int playerAge = 0;
     private Account playerAccount;
     private int playerPosition;
     private Color playerColor;
+    private double playerAge;
     private int playerId;
     private boolean hasChanceCard;
     private boolean hasGetOutOfJailCard;
@@ -86,7 +90,7 @@ public class Player {
 
 
     //Class constructor for the Player class
-    public Player(String playerName, int playerAge, Account playerAccount, Color playerColor,int playerId)
+    public Player(String playerName, double playerAge, Account playerAccount, Color playerColor, int playerId)
     {
         this.playerColor = playerColor;
         this.playerPosition = 0;
