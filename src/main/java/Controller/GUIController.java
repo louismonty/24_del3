@@ -84,6 +84,9 @@ public class GUIController {
     public void placePlayer(int position, GUI_Player player){
         field[position].setCar(player,true);
     }
+    public void removePlayer(int position,GUI_Player player){
+        field[position].setCar(player , false);
+    }
     public void movePlayer(int currentPlayerPosition,int move,GUI_Player player) {
         field[currentPlayerPosition%24].setCar(player, false);
         field[(currentPlayerPosition + move) % 24].setCar(player, true);
