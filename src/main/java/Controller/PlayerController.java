@@ -75,23 +75,41 @@ public class PlayerController {
 
     public void Make2Players()
     {
-        player1 = new Player("UNKNOWN", 0, new Account(20), Color.black,0);
-        player2 = new Player("UNKNOWN", 0, new Account(20), Color.blue,1);
+        player1 = new Player("UNKNOWN", new int[] {player1.getYear(), player1.getMonth(), player1.getDay()},
+                new Account(20), Color.black,0);
+
+        player2 = new Player("UNKNOWN", new int[] {player2.getYear(), player2.getMonth(), player2.getDay()},
+                new Account(20), Color.blue,1);
+
         playerArray = new Player[]{player1, player2};
     }
     public void Make3Players()
     {
-        player1 = new Player("UNKNOWN", 0, new Account(18), Color.black,0);
-        player2 = new Player("UNKNOWN", 0, new Account(18), Color.blue,1);
-        player3 = new Player("UNKNOWN", 0, new Account(18), Color.red,2);
+        player1 = new Player("UNKNOWN", new int[] {player1.getYear(), player1.getMonth(), player1.getDay()},
+                new Account(18), Color.black,0);
+
+        player2 = new Player("UNKNOWN", new int[] {player2.getYear(), player2.getMonth(), player2.getDay()},
+                new Account(18), Color.blue,1);
+
+        player3 = new Player("UNKNOWN", new int[] {player3.getYear(), player3.getMonth(), player3.getDay()},
+                new Account(18), Color.red,2);
+
         playerArray = new Player[]{player1, player2, player3};
     }
     public void Make4Players()
     {
-        player1 = new Player("UNKNOWN", 0, new Account(16), Color.black,0);
-        player2 = new Player("UNKNOWN", 0, new Account(16), Color.blue,1);
-        player3 = new Player("UNKNOWN", 0, new Account(16), Color.red,2);
-        player4 = new Player("UNKNOWN", 0, new Account(16), Color.green,3);
+        player1 = new Player("UNKNOWN", new int[] {player1.getYear(), player1.getMonth(), player1.getDay()},
+                new Account(16), Color.black,0);
+
+        player2 = new Player("UNKNOWN", new int[] {player2.getYear(), player2.getMonth(), player2.getDay()},
+                new Account(16), Color.blue,1);
+
+        player3 = new Player("UNKNOWN", new int[] {player3.getYear(), player3.getMonth(), player3.getDay()},
+                new Account(16), Color.red,2);
+
+        player4 = new Player("UNKNOWN", new int[] {player4.getYear(), player4.getMonth(), player4.getDay()},
+                new Account(16), Color.green,3);
+
         playerArray = new Player[]{player1, player2, player3, player4};
     }
 
@@ -119,5 +137,10 @@ public class PlayerController {
         {
             return player4;
         }
+    }
+
+    public Player youngestPlayer()
+    {
+        
     }
 }

@@ -1,8 +1,7 @@
 package Game;
 
-import Game.Account;
-
 import java.awt.*;
+import java.text.SimpleDateFormat;
 
 public class Player {
     //playerName Getter
@@ -19,13 +18,13 @@ public class Player {
 
     //playerAge Getter
 
-    public int[] getPlayerAge()
+    public SimpleDateFormat getPlayerAge()
     {
         return playerAge;
     }
 
     //playerAge Setter
-    public void setPlayerAge(int[] playerAge)
+    public void setPlayerAge()
     {
         this.playerAge = playerAge;
     }
@@ -76,39 +75,14 @@ public class Player {
         return hasGetOutOfJailCard;
     }
 
-    public void setYear(int year)
+    SimpleDateFormat playerAge;
+
     {
-        this.year = year;
-    }
-
-    public void setMonth(int month)
-    {
-        this.month = month;
-    }
-
-    public void setDay(int day)
-    {
-        this.day = day;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public int getMonth() {
-        return month;
-    }
-
-    public int getDay() {
-        return day;
+        playerAge = new SimpleDateFormat("yyyy-MM-dd");
     }
 
     //Class attributes
     private String playerName;
-    private int year;
-    private int month;
-    private int day;
-    private int playerAge[] = {year, month, day};
     private Account playerAccount;
     private int playerPosition;
     private Color playerColor;
@@ -119,7 +93,7 @@ public class Player {
 
 
     //Class constructor for the Player class
-    public Player(String playerName, int playerAge[], Account playerAccount, Color playerColor,int playerId)
+    public Player(String playerName, SimpleDateFormat playerAge, Account playerAccount, Color playerColor, int playerId)
     {
         this.playerColor = playerColor;
         this.playerPosition = 0;
