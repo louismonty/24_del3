@@ -4,6 +4,7 @@ import Game.Account;
 import Game.Player;
 
 import java.awt.*;
+import java.text.SimpleDateFormat;
 
 public class PlayerController {
 
@@ -75,23 +76,71 @@ public class PlayerController {
 
     public void Make2Players()
     {
-        player1 = new Player("UNKNOWN", 0, new Account(20), Color.black,0);
-        player2 = new Player("UNKNOWN", 0, new Account(20), Color.blue,1);
+        player1 = new Player("UNKNOWN",19000101, new Account(20), Color.black,0);
+        player2 = new Player("UNKNOWN",19000101, new Account(20), Color.blue,1);
         playerArray = new Player[]{player1, player2};
     }
+
     public void Make3Players()
     {
-        player1 = new Player("UNKNOWN", 0, new Account(18), Color.black,0);
-        player2 = new Player("UNKNOWN", 0, new Account(18), Color.blue,1);
-        player3 = new Player("UNKNOWN", 0, new Account(18), Color.red,2);
+        player1 = new Player("UNKNOWN", 19000101, new Account(18), Color.black,0);
+        player2 = new Player("UNKNOWN", 19000101, new Account(18), Color.blue,1);
+        player3 = new Player("UNKNOWN", 19000101, new Account(18), Color.red,2);
         playerArray = new Player[]{player1, player2, player3};
     }
     public void Make4Players()
     {
-        player1 = new Player("UNKNOWN", 0, new Account(16), Color.black,0);
-        player2 = new Player("UNKNOWN", 0, new Account(16), Color.blue,1);
-        player3 = new Player("UNKNOWN", 0, new Account(16), Color.red,2);
-        player4 = new Player("UNKNOWN", 0, new Account(16), Color.green,3);
+        player1 = new Player("UNKNOWN", 19000101, new Account(16), Color.black,0);
+        player2 = new Player("UNKNOWN", 19000101, new Account(16), Color.blue,1);
+        player3 = new Player("UNKNOWN", 19000101, new Account(16), Color.red,2);
+        player4 = new Player("UNKNOWN", 19000101, new Account(16), Color.green,3);
         playerArray = new Player[]{player1, player2, player3, player4};
+    }
+
+    public Player playerWithHighestBalance()
+    {
+        if ((player1.getPlayerAccount().getBalance() >= player2.getPlayerAccount().getBalance())
+                && (player1.getPlayerAccount().getBalance() >= player3.getPlayerAccount().getBalance())
+                && (player1.getPlayerAccount().getBalance() >= player4.getPlayerAccount().getBalance()))
+        {
+            return player1;
+        }
+
+        else if ((player2.getPlayerAccount().getBalance() >= player3.getPlayerAccount().getBalance())
+                && (player2.getPlayerAccount().getBalance() >= player4.getPlayerAccount().getBalance()))
+        {
+            return player2;
+        }
+
+        else if (player3.getPlayerAccount().getBalance() >= player4.getPlayerAccount().getBalance())
+        {
+            return player3;
+        }
+
+        else
+        {
+            return player4;
+        }
+    }
+
+    public Player youngestPlayer()
+    {
+        if ((player1.getPlayerAge() >= player2.getPlayerAge()) && (player1.getPlayerAge() >= player3.getPlayerAge())
+                && (player1.getPlayerAge() >= player4.getPlayerAge()))
+        {
+            return player1;
+        }
+        else if ((player2.getPlayerAge() >= player3.getPlayerAge()) && (player2.getPlayerAge() >= player4.getPlayerAge()))
+        {
+            return player2;
+        }
+        else if (player3.getPlayerAge() >= player4.getPlayerAge())
+        {
+            return player3;
+        }
+        else
+        {
+            return player4;
+        }
     }
 }

@@ -16,10 +16,10 @@ private static Rules rl = new Rules();
 private static boolean isGameRunning = true;
 private static int roll;
 public static void gameloop(){
-    Player[] playerArray = {new Player("Louis", 20, new Account(20), Color.black,0),new Player("Isak", 25, new Account(20), Color.blue,1)};
-    PC.setPlayerArray(playerArray);
-    //Player[] playerArray;
-    //PC.setPlayerArray(Mn.AddPlayer(GC));
+    //Player[] playerArray = {new Player("Louis", 20, new Account(20), Color.black,0),new Player("Isak", 25, new Account(20), Color.blue,1)};
+    //PC.setPlayerArray(playerArray);
+    Player[] playerArray;
+    PC.setPlayerArray(Mn.AddPlayer(GC));
     Player currentPlayer = PC.getCurrentPlayer();
     GUI_Player[] GuiPlayers = GC.createplayer(PC.getPlayerArray());
     while(isGameRunning) {
