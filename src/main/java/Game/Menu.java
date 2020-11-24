@@ -1,55 +1,80 @@
 package Game;
-import java.util.List;
+import Controller.GUIController;
+import Controller.PlayerController;
 import java.util.Scanner;
+
 
 public class Menu {
 
-    //Make List that contains Player objects
-    List<PlayerController> playerControllers;
+    PlayerController playerController = new PlayerController();
 
-    //Method that add player objects when button pushed
-    public void AddPlayerButton()
+
+    public Player[] AddPlayer(GUIController GC)
     {
-        int nextButtonHit = 0;
-        while (nextButtonHit != 1) {
-            String key;
-            Scanner input = new Scanner(System.in);
-            key = input.nextLine();
-            //key should be == addPlayerGUI button
-            if (key == "n") {
-                CreatePlayerController();
-            }
 
-            //key should be == nextGUI button
-            if (key == "m") {
+        Scanner scan = new Scanner(System.in);
+        int numberOfPlayers = GC.intigerInput("Please enter the amount of players from 2-4",2,4);
 
-                if (playerControllers.size() != 0) {
-                    SetUpPlayers();
-                    nextButtonHit = 1;
-                }
-            }
-        }
-    }
-
-    private void CreatePlayerController()
-    {
-        if(playerControllers.size() < 4)
+        switch (numberOfPlayers)
         {
-            playerControllers.add(new PlayerController());
-        }
-    }
-    public void SetUpPlayers()
-    {
-        for (int i = 0; i < playerControllers.size(); i++) {
-            Scanner input = new Scanner(System.in);
-            playerControllers.get(i).getPlayer().setPlayerName(input.nextLine());
-            System.out.println(playerControllers.get(i).getPlayer().getPlayerName());
-            input.close();
+            case 2:
+                playerController.Make2Players();
+                System.out.println("you created 2 players!");
+                SetupPlayer1(GC);
+                SetupPlayer2(GC);
+                break;
 
-        }
-    }
-    public void StartGameButton()
-    {
+            case 3:
+                playerController.Make3Players();
+                System.out.println("you created 3 players!");
+                SetupPlayer1(GC);
+                SetupPlayer2(GC);
+                SetupPlayer3(GC);
+                break;
 
+            case 4:
+                playerController.Make4Players();
+                System.out.println("you created 4 players!");
+                SetupPlayer1(GC);
+                SetupPlayer2(GC);
+                SetupPlayer3(GC);
+                SetupPlayer4(GC);
+                break;
+            default:
+                System.out.println("ERROR NO PLAYERS ADDED!");
+        }
+        scan.close();
+        return playerController.getPlayerArray();
+    }
+    public void SetupPlayer1(GUIController GC)
+    {
+        String playerName = GC.stringInput("Please enter player 1 name:").toUpperCase();
+        playerController.getPlayer1().setPlayerName(playerName);
+        int playerAge = GC.intigerInput("Please enter player 1 age:",0,130);
+        playerController.getPlayer1().setPlayerAge(playerAge);
+    }
+
+    public void SetupPlayer2(GUIController GC)
+    {
+        String playerName = GC.stringInput("Please enter player 2 name:").toUpperCase();
+        playerController.getPlayer2().setPlayerName(playerName);
+        int playerAge = GC.intigerInput("Please enter player 2 age:",0,130);
+        playerController.getPlayer2().setPlayerAge(playerAge);
+    }
+
+    public void SetupPlayer3(GUIController GC)
+    {
+        String playerName = GC.stringInput("Please enter player 3 name:").toUpperCase();
+        playerController.getPlayer3().setPlayerName(playerName);
+        int playerAge = GC.intigerInput("Please enter player 3 age:",0,130);
+        playerController.getPlayer3().setPlayerAge(playerAge);
+    }
+
+    public void SetupPlayer4(GUIController GC)
+    {
+        String playerName = GC.stringInput("Please enter player 4 name:").toUpperCase();
+        playerController.getPlayer4().setPlayerName(playerName);
+        int playerAge = GC.intigerInput("Please enter player 4 age:",0,130);
+        playerController.getPlayer4().setPlayerAge(playerAge);
     }
 }
