@@ -23,4 +23,19 @@ public class Rules {
             }
             return true;
         }
+        public void startCardRule(GUIController GC, Player currentPlayer, FieldController FC)
+        {
+
+            int felt = GC.intigerInput("Vælg et felt som nummer",1, 25);
+            currentPlayer.setPlayerPosition(felt-1);
+            PropertyField field = ((PropertyField)FC.getGameboard()[currentPlayer.getPlayerPosition()]);
+            if(field.getIsPropertyBought()==false)
+            {
+                field.setOwner(currentPlayer);
+            }
+            else
+            {
+                field.payRent(field, currentPlayer, field.getOwner());
+            }
+        }
     }
