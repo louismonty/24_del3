@@ -4,7 +4,6 @@ import Game.Dice;
 
 public class DiceController {
     private Dice dice1 = new Dice();
-    private Dice dice2 = new Dice();
 
 
     /**
