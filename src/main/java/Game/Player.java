@@ -16,13 +16,14 @@ public class Player {
     }
 
     //playerAge Getter
-    public int getPlayerAge()
+
+    public int[] getPlayerAge()
     {
         return playerAge;
     }
 
     //playerAge Setter
-    public void setPlayerAge(int playerAge)
+    public void setPlayerAge(int[] playerAge)
     {
         this.playerAge = playerAge;
     }
@@ -72,9 +73,27 @@ public class Player {
         return hasGetOutOfJailCard;
     }
 
+    public void setYear(int year)
+    {
+        this.year = year;
+    }
+
+    public void setMonth(int month)
+    {
+        this.month = month;
+    }
+
+    public void setDay(int day)
+    {
+        this.day = day;
+    }
+
     //Class attributes
     private String playerName;
-    private int playerAge = 0;
+    private int year;
+    private int month;
+    private int day;
+    private int playerAge[] = {year, month, day};
     private Account playerAccount;
     private int playerPosition;
     private Color playerColor;
@@ -85,7 +104,7 @@ public class Player {
 
 
     //Class constructor for the Player class
-    public Player(String playerName, int playerAge, Account playerAccount, Color playerColor,int playerId)
+    public Player(String playerName, int playerAge[], Account playerAccount, Color playerColor,int playerId)
     {
         this.playerColor = playerColor;
         this.playerPosition = 0;
