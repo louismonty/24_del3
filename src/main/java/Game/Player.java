@@ -1,3 +1,5 @@
+package Game;
+
 import Game.Account;
 
 import java.awt.*;
