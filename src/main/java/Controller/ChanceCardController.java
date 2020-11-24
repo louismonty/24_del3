@@ -75,20 +75,20 @@ public class ChanceCardController
                 drawChanceCard();
                 break;
             case 1:
-                currentChanceCard.startCard(currentPlayer,(StartField) FC.getGameboard()[0]);
+                currentChanceCard.startCard(currentPlayer,player,(StartField) FC.getGameboard()[0],GC);
                 GC.showChanceCard("Ryk frem til start og modtag 2M.");
                 break;
             case 2:
-                currentChanceCard.fiveFieldsForwardCard(currentPlayer,GC);
+                currentChanceCard.fiveFieldsForwardCard(currentPlayer,player,GC);
                 GC.showChanceCard("Ryk op til 5 felter frem.");
                 break;
             case 3:
-                currentChanceCard.freeOrangeCard(currentPlayer,FC,GC);
+                currentChanceCard.freeOrangeCard(currentPlayer,FC,GC,player);
                 GC.showChanceCard("Gratis felt!" +
                         "\nRyk frem til et orange felt. Hvis det er ledigt, får du det gratis! Ellers skal du betale leje til ejeren.");
                 break;
             case 4:
-                currentChanceCard.moveOneOrDrawChanceCardCard(currentPlayer,GC,this);
+                currentChanceCard.moveOneOrDrawChanceCardCard(currentPlayer,GC,this,player);
                 GC.showChanceCard("Ryk 1 felt frem, eller tag et chancekort mere.");
                 break;
             case 5:
@@ -105,12 +105,12 @@ public class ChanceCardController
                         "\nBetal 2M til banken.");
                 break;
             case 7:
-                currentChanceCard.freeOrangeOrGreenCard(currentPlayer,FC,GC);
+                currentChanceCard.freeOrangeOrGreenCard(currentPlayer,FC,GC,player);
                 GC.showChanceCard("Gratis felt!" +
                         "\nRyke frem til et orange eller grønt felt. Hvis det er ledigt, får du det gratis! Ellers skal du betale leje til ejeren");
                 break;
             case 8:
-                currentChanceCard.freeLightBlueCard(currentPlayer,FC,GC);
+                currentChanceCard.freeLightBlueCard(currentPlayer,FC,GC,player);
                 GC.showChanceCard("Gratis felt!" +
                         "\nRyk frem til et lyseblåt felt. Hvis det er ledigt, får du det gratis! Ellers skal du betale leje til ejeren.");
                 break;
@@ -120,7 +120,7 @@ public class ChanceCardController
                         "\nBehold dette kort, indtil du får brug for det.");
                 break;
             case 10:
-                currentChanceCard.strandpromenadenCard(currentPlayer);
+                currentChanceCard.strandpromenadenCard(currentPlayer,player,GC);
                 GC.showChanceCard("Ryk frem til Standpromenaden.");
                 break;
             case 11:
@@ -145,7 +145,7 @@ public class ChanceCardController
                         "\nTillykke med fødselsdagen!");
                 break;
             case 14:
-                currentChanceCard.freePinkOrBlueCard(currentPlayer,FC,GC);
+                currentChanceCard.freePinkOrBlueCard(currentPlayer,FC,GC,player);
                 GC.showChanceCard("Gratis felt!" +
                         "\nRyk frem til et pink eller blåt felt. Hvis det er ledigt, får du det gratis! Ellers skal du betale leje til ejeren.");
                 break;
@@ -155,11 +155,11 @@ public class ChanceCardController
                         "\nModtage 2M fra banken.");
                 break;
             case 16:
-                currentChanceCard.freeRedCard(currentPlayer,FC,GC);
+                currentChanceCard.freeRedCard(currentPlayer,FC,GC,player);
                 GC.showChanceCard("Gratis felt! Ryk frem til et rødt felt. Hvis det er ledigt, får du det gratis! Ellers skal du betale leje til ejeren.");
                 break;
             case 17:
-                currentChanceCard.skaterparkenCard(currentPlayer,FC);
+                currentChanceCard.skaterparkenCard(currentPlayer,FC,player,GC);
                 GC.showChanceCard("Gratis felt!" +
                         "\nRyk frem til Skaterparken for at lave det perfekte grind! " +
                         "\nHvis ingen ejer den, får du den gratis! Ellers skal du betale leje til ejeren.");
