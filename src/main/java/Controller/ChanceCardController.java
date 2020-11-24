@@ -33,7 +33,7 @@ public class ChanceCardController
     }
     public ChanceCard drawChanceCard()
     {
-        for(int i = 0; i<=chanceCardDeck.length; i++)
+        for(int i = 0; i<=chanceCardDeck.length-1; i++)
         {
             if(i==chanceCardDeck.length-1)
             {
@@ -42,6 +42,7 @@ public class ChanceCardController
             else
             chanceCardDeck[i] = chanceCardDeck[i+1];
         }
+
         return chanceCardDeck[0];
     }
 

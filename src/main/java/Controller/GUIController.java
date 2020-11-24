@@ -113,6 +113,9 @@ public class GUIController {
     public void updatePlayerBal(int bal, GUI_Player player){
         player.setBalance(bal);
     }
+    public void removeCar(){
+
+    }
     public boolean isInstanceOfField(int currentposition){
         return (field[currentposition] instanceof GUI_Street);
     }

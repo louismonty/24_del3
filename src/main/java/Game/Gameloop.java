@@ -16,7 +16,7 @@ private static Rules rl = new Rules();
 private static boolean isGameRunning = true;
 private static int roll;
 public static void gameloop(){
-    //Player[] playerArray = {new Player("Louis", 20, new Account(20), Color.black,0),new Player("Isak", 25, new Account(20), Color.blue,1)};
+    //Player[] playerArray = {new Player("Louis", 20, new Account(200), Color.black,0),new Player("Isak", 25, new Account(200), Color.blue,1)};
     //PC.setPlayerArray(playerArray);
     Player[] playerArray;
     PC.setPlayerArray(Mn.AddPlayer(GC));
@@ -24,16 +24,11 @@ public static void gameloop(){
     GUI_Player[] GuiPlayers = GC.createplayer(PC.getPlayerArray());
     while(isGameRunning) {
             currentPlayer = PC.getCurrentPlayer();
-            if(!currentPlayer.getIsInJail()) {
-                rollDice(currentPlayer, GuiPlayers);
-                FC.getGameboard()[currentPlayer.getPlayerPosition()].landOnField(FC, currentPlayer, PC.getPlayerArray(), GC, GuiPlayers[currentPlayer.getPlayerId()], GuiPlayers);
-                rl.afterRules(currentPlayer, GC);
-                GuiPlayers[currentPlayer.getPlayerId()].setBalance(currentPlayer.getPlayerAccount().getBalance());
-                isGameRunning = rl.win(currentPlayer, GC);
-            }
-            else {
-                currentPlayer.setIsInJail(false);
-            }
+            rollDice(currentPlayer, GuiPlayers);
+            rl.startRules(currentPlayer, GC);
+            FC.getGameboard()[currentPlayer.getPlayerPosition()%24].landOnField(FC, currentPlayer, PC.getPlayerArray(), GC, GuiPlayers[currentPlayer.getPlayerId()], GuiPlayers);
+            GuiPlayers[currentPlayer.getPlayerId()].setBalance(currentPlayer.getPlayerAccount().getBalance());
+            isGameRunning = rl.win(currentPlayer, GC);
         PC.NextPlayer();
     }
 }
@@ -45,7 +40,7 @@ public static void gameloop(){
         Dc.diceRoll();
         roll = Dc.diceValue();
         GC.showDice(roll);
-        int newPlayerPosition = (currentPlayer.getPlayerPosition() + roll) % 24;
+        int newPlayerPosition = (currentPlayer.getPlayerPosition() + roll);
         GC.movePlayer(currentPlayer.getPlayerPosition(), roll, GuiPlayers[currentPlayer.getPlayerId()]);
         currentPlayer.setPlayerPosition(newPlayerPosition);
     }

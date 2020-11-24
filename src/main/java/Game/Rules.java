@@ -7,7 +7,7 @@ import gui_fields.GUI_Player;
 import java.awt.*;
 
 public class Rules {
-        public void afterRules(Player currentPlayer,GUIController GC){
+        public void startRules(Player currentPlayer,GUIController GC){
             //start rules changes player position
             if(currentPlayer.getPlayerPosition()>=24){
                 currentPlayer.getPlayerAccount().setBalance(currentPlayer.getPlayerAccount().getBalance()+2);
