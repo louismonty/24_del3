@@ -25,7 +25,7 @@ public class Player {
     }
 
     //playerAge Setter
-    public void setPlayerAge()
+    public void setPlayerAge(double playerAge)
     {
         this.playerAge = playerAge;
     }

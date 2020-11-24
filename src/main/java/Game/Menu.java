@@ -51,47 +51,35 @@ public class Menu {
     {
         String playerName = GC.stringInput("Please enter player 1 name:").toUpperCase();
         playerController.getPlayer1().setPlayerName(playerName);
-        int ageYear = GC.intigerInput("Please enter birth year",1900,2021);
-        playerController.getPlayer1().setYear(ageYear);
-        int ageMonth = GC.intigerInput("Please enter birth month",1,12);
-        playerController.getPlayer1().setYear(ageMonth);
-        int ageDay = GC.intigerInput("Please enter birth Day",1,31);
-        playerController.getPlayer1().setYear(ageDay);
+        double playerAge = GC.intigerInput("Enter birth day like such: yyyymmdd",19000101,20201212);
+        playerController.getPlayer1().setPlayerAge(playerAge);
+
     }
 
     public void SetupPlayer2(GUIController GC)
     {
         String playerName = GC.stringInput("Please enter player 2 name:").toUpperCase();
         playerController.getPlayer2().setPlayerName(playerName);
-        int ageYear = GC.intigerInput("Please enter birth year",1900,2021);
-        playerController.getPlayer2().setYear(ageYear);
-        int ageMonth = GC.intigerInput("Please enter birth month",1,12);
-        playerController.getPlayer2().setYear(ageMonth);
-        int ageDay = GC.intigerInput("Please enter birth Day",1,31);
-        playerController.getPlayer2().setYear(ageDay);
+        double playerAge = GC.intigerInput("Enter birth day like such: yyyymmdd",19000101,20201212);
+        playerController.getPlayer2().setPlayerAge(playerAge);
+
     }
 
     public void SetupPlayer3(GUIController GC)
     {
         String playerName = GC.stringInput("Please enter player 3 name:").toUpperCase();
         playerController.getPlayer3().setPlayerName(playerName);
-        int ageYear = GC.intigerInput("Please enter birth year",1900,2021);
-        playerController.getPlayer3().setYear(ageYear);
-        int ageMonth = GC.intigerInput("Please enter birth month",1,12);
-        playerController.getPlayer3().setYear(ageMonth);
-        int ageDay = GC.intigerInput("Please enter birth Day",1,31);
-        playerController.getPlayer3().setYear(ageDay);
+        double playerAge = GC.intigerInput("Enter birth day like such: yyyymmdd",19000101,20201212);
+        playerController.getPlayer3().setPlayerAge(playerAge);
+
     }
 
     public void SetupPlayer4(GUIController GC)
     {
         String playerName = GC.stringInput("Please enter player 4 name:").toUpperCase();
         playerController.getPlayer4().setPlayerName(playerName);
-        int ageYear = GC.intigerInput("Please enter birth year",1900,2021);
-        playerController.getPlayer4().setYear(ageYear);
-        int ageMonth = GC.intigerInput("Please enter birth month",1,12);
-        playerController.getPlayer4().setYear(ageMonth);
-        int ageDay = GC.intigerInput("Please enter birth Day",1,31);
-        playerController.getPlayer4().setYear(ageDay);
+        double playerAge = GC.intigerInput("Enter birth day like such: yyyymmdd",19000101,20201212);
+        playerController.getPlayer4().setPlayerAge(playerAge);
+
     }
 }
