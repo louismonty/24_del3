@@ -32,9 +32,7 @@ public static void gameloop(){
         playerController.NextPlayer();
     }
 }
-    public static void main(String[] args){
-    gameloop();
-    }
+
     public static void rollDice(Player currentPlayer, GUI_Player[] GuiPlayers){
         guiController.oneButton("its" + " " + currentPlayer.getPlayerName() + " " + "to roll click roll", "roll");
         diceController.diceRoll();
