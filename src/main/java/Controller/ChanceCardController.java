@@ -124,20 +124,22 @@ public class ChanceCardController
                 GC.showChanceCard("Ryk frem til Standpromenaden.");
                 break;
             case 11:
-                currentChanceCard.redPlayerCard(players[2]);
                 GC.showChanceCard("Giv dette kort til rød spiller, og tag et chancekort mere." +
                         "\nRød spiller: På din næste tur skal du drøne frem til et hvilket som helst ledigt felt og købe det." +
                         "\nHvis der ikke er nogen ledige felter, skal du købe et fra en anden spiller!");
                 GC.showMessege("Træk et nyt chancekort");
                 drawChanceCard();
+                if(players[2] != null)
+                    currentChanceCard.redPlayerCard(players[2]);
                 break;
             case 12:
-                currentChanceCard.blackPlayerCard(players[3]);
                 GC.showChanceCard("Giv dette kort til sort spiller, og tag et chancekort mere." +
                         "\nSort spiller: På din næste tur skal du drøne frem til et hvilket som helst ledigt felt og købe det." +
                         "\nHvis der ikke er nogen ledige felter, skal du købe et fra en anden spiller!");
                 GC.showMessege("Træk et nyt chancekort");
                 drawChanceCard();
+                if(players[3] != null)
+                    currentChanceCard.blackPlayerCard(players[3]);
                 break;
             case 13:
                 currentChanceCard.birthdayCard(currentPlayer,players);
