@@ -1,5 +1,6 @@
 package Game;
 
+import Controller.ChanceCardController;
 import Controller.FieldController;
 import Controller.GUIController;
 import gui_fields.GUI_Player;
@@ -15,5 +16,5 @@ public abstract class Field
         this.colorID = colorID;
         this.name = name;
     }
-    public abstract void landOnField(FieldController FC, Player currentPlayer,Player[] Players, GUIController GC, GUI_Player player, GUI_Player[] PlayerArray);
+    public abstract void landOnField(FieldController FC, Player currentPlayer, Player[] Players, GUIController GC, GUI_Player player, GUI_Player[] PlayerArray, ChanceCardController CC);
 }

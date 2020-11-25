@@ -1,5 +1,6 @@
 package Game;
 
+import Controller.ChanceCardController;
 import Controller.FieldController;
 import Controller.GUIController;
 import gui_fields.GUI_Player;
@@ -26,7 +27,7 @@ public class JailField extends Field
             currentPlayer.getPlayerAccount().subtractBalance(1);
         }
     }
-    public void landOnField(FieldController FC, Player currentPlayer,Player[] Players, GUIController GC, GUI_Player player, GUI_Player[] PlayerArray)
+    public void landOnField(FieldController FC, Player currentPlayer,Player[] Players, GUIController GC, GUI_Player player, GUI_Player[] PlayerArray, ChanceCardController CH)
     {
         goToJail(currentPlayer);
         GC.showMessege("du kommer i fængslet");

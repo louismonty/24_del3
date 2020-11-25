@@ -77,6 +77,10 @@ public class PlayerController {
         return playerArray[currentPlayer];
     }
 
+    public void setCurrentPlayer(int firstPlayer){
+        this.currentPlayer = firstPlayer;
+    }
+
     //Next player method
     public void NextPlayer()
     {

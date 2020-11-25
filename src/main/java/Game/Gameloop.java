@@ -12,6 +12,7 @@ private static FieldController FC = new FieldController();
 private static GUIController GC = new GUIController();
 private static PlayerController PC = new PlayerController();
 private static Menu Mn = new Menu();
+
 private static Rules rl = new Rules();
 private static boolean isGameRunning = true;
 private static int roll;
@@ -26,9 +27,9 @@ public static void gameloop(){
             currentPlayer = PC.getCurrentPlayer();
             rollDice(currentPlayer, GuiPlayers);
             rl.startRules(currentPlayer, GC);
-            FC.getGameboard()[currentPlayer.getPlayerPosition()%24].landOnField(FC, currentPlayer, PC.getPlayerArray(), GC, GuiPlayers[currentPlayer.getPlayerId()], GuiPlayers);
+            FC.getGameboard()[currentPlayer.getPlayerPosition()%24].landOnField(FC, currentPlayer, PC.getPlayerArray(), GC, GuiPlayers[currentPlayer.getPlayerId()], GuiPlayers,CC);
             GuiPlayers[currentPlayer.getPlayerId()].setBalance(currentPlayer.getPlayerAccount().getBalance());
-            isGameRunning = rl.win(currentPlayer, GC);
+            isGameRunning = rl.win(currentPlayer, GC,PC);
         PC.NextPlayer();
     }
 }

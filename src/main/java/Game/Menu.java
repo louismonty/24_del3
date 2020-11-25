@@ -7,10 +7,10 @@ import java.util.Scanner;
 
 public class Menu {
 
-    PlayerController playerController = new PlayerController();
+    //PlayerController playerController = new PlayerController();
 
 
-    public Player[] AddPlayer(GUIController GC)
+    public void AddPlayer(GUIController GC,PlayerController PlayerController)
     {
 
         Scanner scan = new Scanner(System.in);
@@ -19,67 +19,66 @@ public class Menu {
         switch (numberOfPlayers)
         {
             case 2:
-                playerController.Make2Players();
+                PlayerController.Make2Players();
                 System.out.println("you created 2 players!");
-                SetupPlayer1(GC);
-                SetupPlayer2(GC);
+                SetupPlayer1(GC,PlayerController);
+                SetupPlayer2(GC,PlayerController);
                 break;
 
             case 3:
-                playerController.Make3Players();
+                PlayerController.Make3Players();
                 System.out.println("you created 3 players!");
-                SetupPlayer1(GC);
-                SetupPlayer2(GC);
-                SetupPlayer3(GC);
+                SetupPlayer1(GC,PlayerController);
+                SetupPlayer2(GC,PlayerController);
+                SetupPlayer3(GC,PlayerController);
                 break;
 
             case 4:
-                playerController.Make4Players();
+                PlayerController.Make4Players();
                 System.out.println("you created 4 players!");
-                SetupPlayer1(GC);
-                SetupPlayer2(GC);
-                SetupPlayer3(GC);
-                SetupPlayer4(GC);
+                SetupPlayer1(GC,PlayerController);
+                SetupPlayer2(GC,PlayerController);
+                SetupPlayer3(GC,PlayerController);
+                SetupPlayer4(GC,PlayerController);
                 break;
             default:
                 System.out.println("ERROR NO PLAYERS ADDED!");
         }
         scan.close();
-        return playerController.getPlayerArray();
     }
-    public void SetupPlayer1(GUIController GC)
+    public void SetupPlayer1(GUIController GC, PlayerController PlayerController)
     {
         String playerName = GC.stringInput("Please enter player 1 name:").toUpperCase();
-        playerController.getPlayer1().setPlayerName(playerName);
+        PlayerController.getPlayer1().setPlayerName(playerName);
         double playerAge = GC.intigerInput("Enter birth day like such: yyyymmdd",19000101,20201212);
-        playerController.getPlayer1().setPlayerAge(playerAge);
+        PlayerController.getPlayer1().setPlayerAge(playerAge);
 
     }
 
-    public void SetupPlayer2(GUIController GC)
+    public void SetupPlayer2(GUIController GC,PlayerController PlayerController)
     {
         String playerName = GC.stringInput("Please enter player 2 name:").toUpperCase();
-        playerController.getPlayer2().setPlayerName(playerName);
+        PlayerController.getPlayer2().setPlayerName(playerName);
         double playerAge = GC.intigerInput("Enter birth day like such: yyyymmdd",19000101,20201212);
-        playerController.getPlayer2().setPlayerAge(playerAge);
+        PlayerController.getPlayer2().setPlayerAge(playerAge);
 
     }
 
-    public void SetupPlayer3(GUIController GC)
+    public void SetupPlayer3(GUIController GC,PlayerController PlayerController)
     {
         String playerName = GC.stringInput("Please enter player 3 name:").toUpperCase();
-        playerController.getPlayer3().setPlayerName(playerName);
+        PlayerController.getPlayer3().setPlayerName(playerName);
         double playerAge = GC.intigerInput("Enter birth day like such: yyyymmdd",19000101,20201212);
-        playerController.getPlayer3().setPlayerAge(playerAge);
+        PlayerController.getPlayer3().setPlayerAge(playerAge);
 
     }
 
-    public void SetupPlayer4(GUIController GC)
+    public void SetupPlayer4(GUIController GC,PlayerController PlayerController)
     {
         String playerName = GC.stringInput("Please enter player 4 name:").toUpperCase();
-        playerController.getPlayer4().setPlayerName(playerName);
+        PlayerController.getPlayer4().setPlayerName(playerName);
         double playerAge = GC.intigerInput("Enter birth day like such: yyyymmdd",19000101,20201212);
-        playerController.getPlayer4().setPlayerAge(playerAge);
+        PlayerController.getPlayer4().setPlayerAge(playerAge);
 
     }
 }

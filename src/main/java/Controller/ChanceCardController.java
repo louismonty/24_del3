@@ -53,9 +53,9 @@ public class ChanceCardController
     {
         Random random = new Random();
 
-        for (int i = 0; i <= chanceCardDeck.length; i++) {
+        for (int i = 0; i < chanceCardDeck.length; i++) {
 
-            int r = i + random.nextInt((chanceCardDeck.length - 1) - i);
+            int r = i + random.nextInt((chanceCardDeck.length ) - i);
 
             ChanceCard temp = chanceCardDeck[r];
             chanceCardDeck[r] = chanceCardDeck[i];

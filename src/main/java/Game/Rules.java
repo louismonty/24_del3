@@ -2,6 +2,7 @@ package Game;
 
 import Controller.FieldController;
 import Controller.GUIController;
+import Controller.PlayerController;
 import gui_fields.GUI_Player;
 
 import java.awt.*;
@@ -15,10 +16,10 @@ public class Rules {
                 GC.showMessege("du får 2 m for at komme over start");
             }
         }
-        public boolean win(Player currentPlayer,GUIController GC){
+        public boolean win(Player currentPlayer, GUIController GC,PlayerController PC){
             if(currentPlayer.getPlayerAccount().getBalance() <0){
                 // den med flest penge vinder
-                GC.showMessege(currentPlayer.getPlayerName()+"  lost");
+                GC.showMessege(PC.playerWithHighestBalance().getPlayerName()+"  lost");
                 return false;
             }
             return true;
