@@ -27,7 +27,7 @@ public class Rules {
         public boolean win(Player currentPlayer, GUIController guiController,PlayerController playerController){
             if(currentPlayer.getPlayerAccount().getBalance() <0){
                 // den med flest penge vinder
-                guiController.showMessege(playerController.playerWithHighestBalance().getPlayerName()+"  lost");
+                guiController.showMessege(playerController.playerWithHighestBalance().getPlayerName()+"  won");
                 return false;
             }
             return true;
