@@ -170,7 +170,10 @@ public class PlayerController {
         return player1;
     }
 
-    //Method for checking with player is youngest
+    /**
+     * Method for checking with player is youngest
+     * @return The youngest player as array
+     */
     public Player youngestPlayer()
     {
         if (playerArray.length == 4)

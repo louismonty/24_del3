@@ -8,7 +8,7 @@ public class DiceController {
 
 
     /**
-     * rolls the 2 dice
+     * rolls the 1 dice
      * to get value use DiceValue()
      */
     public void diceRoll(){
