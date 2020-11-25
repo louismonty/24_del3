@@ -53,7 +53,7 @@ public class ChanceCardController
 
     /**
      * method copied from https://www.geeksforgeeks.org/shuffle-a-deck-of-cards-3/
-     * randmoizes the indexes in chanceCardDeck
+     * randomizes the indexes in chanceCardDeck
      */
     public void shuffleChanceCardDeck()
     {

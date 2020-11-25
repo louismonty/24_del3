@@ -7,7 +7,7 @@ import java.awt.*;
 
 public class PlayerController {
 
-    //Player 1 Getter
+
     private Player player1;
     public Player getPlayer1()
     {
@@ -15,12 +15,12 @@ public class PlayerController {
         return player1;
     }
 
-    //Player 1 Setter
+
     public void setPlayer1(Player player) {
         this.player1 = player;
     }
 
-    //Player 2 Getter
+
     private Player player2;
     public Player getPlayer2()
     {
@@ -28,12 +28,12 @@ public class PlayerController {
         return player2;
     }
 
-    //Player 2 Setter
+
     public void setPlayer2(Player player) {
         this.player2 = player;
     }
 
-    //Player 3 Getter
+
     private Player player3;
     public Player getPlayer3()
     {
@@ -41,12 +41,12 @@ public class PlayerController {
         return player3;
     }
 
-    //Player 3 Setter
+
     public void setPlayer3(Player player) {
         this.player3 = player;
     }
 
-    //Player 4 Getter
+
     private Player player4;
     public Player getPlayer4()
     {
@@ -54,7 +54,7 @@ public class PlayerController {
         return player4;
     }
 
-    //Player 4 Setter
+
     public void setPlayer4(Player player) {
         this.player4 = player;
     }

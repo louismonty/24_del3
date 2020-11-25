@@ -17,12 +17,12 @@ public static void gameloop(){
     Player[] playerArray;
     // ADDPlayer
     menu.AddPlayer(guiController, playerController);
-    //setCurrentplayer og youngestplayer
+    //setCurrentplayer and youngestplayer
     playerController.setCurrentPlayer(playerController.youngestPlayer().getPlayerId());
     //shuffleChanceCardDeck
     chanceCardController.shuffleChanceCardDeck();
     Player currentPlayer;
-    //creatplayer and getPlayerArray
+    //createplayer and getPlayerArray
     GUI_Player[] GuiPlayers = guiController.createplayer(playerController.getPlayerArray());
     //gameloop
     while(isGameRunning) {
@@ -32,11 +32,11 @@ public static void gameloop(){
             rules.hasChanceCard(fieldController,currentPlayer,playerController.getPlayerArray(),guiController,GuiPlayers[currentPlayer.getPlayerId()],GuiPlayers,chanceCardController);
             //rollDice
             rollDice(currentPlayer, GuiPlayers);
-            //startRueles
+            //startRules
             rules.startRules(currentPlayer, guiController);
-            //landonField (måske getgameboard)
+            //landonField
             fieldController.getGameboard()[currentPlayer.getPlayerPosition()%24].landOnField(fieldController, currentPlayer, playerController.getPlayerArray(), guiController, GuiPlayers[currentPlayer.getPlayerId()], GuiPlayers, chanceCardController);
-            //updates balance på GUIen(lad stå)
+            //updates balance in GUIen
             GuiPlayers[currentPlayer.getPlayerId()].setBalance(currentPlayer.getPlayerAccount().getBalance());
             //win
             isGameRunning = rules.win(currentPlayer, guiController, playerController);

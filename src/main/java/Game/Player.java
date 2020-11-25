@@ -5,50 +5,50 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Player {
-    //playerName Getter
+
     public String getPlayerName()
     {
         return playerName;
     }
 
-    //playerName Setter
+
     public void setPlayerName(String playerName)
     {
         this.playerName = playerName;
     }
 
-    //playerAge Getter
+
 
     public double getPlayerAge()
     {
         return playerAge;
     }
 
-    //playerAge Setter
+
     public void setPlayerAge(double playerAge)
     {
         this.playerAge = playerAge;
     }
 
-    //playerAccount Getter
+
     public Account getPlayerAccount()
     {
         return playerAccount;
     }
 
-    //playerAccount Setter
+
     public void setPlayerAccount(Account playerAccount)
     {
         this.playerAccount = playerAccount;
     }
 
-    //playerPosition Getter
+
     public int getPlayerPosition()
     {
         return playerPosition;
     }
 
-    //playerPosition Setter
+
     public void setPlayerPosition(int playerPosition)
     {
         this.playerPosition = playerPosition;

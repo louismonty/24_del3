@@ -2,13 +2,13 @@ package Game;
 
 public class Account {
 
-    //balance Getter
+
     public int getBalance()
     {
         return balance;
     }
 
-    //balance Setter
+
     public void setBalance(int balance)
     {
         this.balance = balance;

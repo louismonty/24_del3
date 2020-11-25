@@ -5,7 +5,7 @@ import java.util.Random;
 public class Dice {
     Random rand = new Random();
     private int faceValue;
-    //constructor
+    //empty constructor
     public Dice(){}
 
     public void roll(){
