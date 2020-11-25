@@ -18,10 +18,13 @@ public class ChanceField extends Field
         return name;
     }
 
-    public void landOnField(FieldController fieldController, Player currentPlayer, Player[] playerArray, GUIController guiController, GUI_Player guiPlayer, GUI_Player[] guiPlayerArray, ChanceCardController chanceCardController)
+    public void landOnField(FieldController fieldController, Player currentPlayer,Player[] Players, GUIController guiController, GUI_Player player, GUI_Player[] PlayerArray, ChanceCardController chanceCardController)
     {
     ChanceCard currentChanceCard = chanceCardController.drawChanceCard();
-    chanceCardController.executeChanceCard(fieldController,currentPlayer, playerArray,guiController, guiPlayer, guiPlayerArray,currentChanceCard);
+    chanceCardController.executeChanceCard(fieldController,currentPlayer,Players,guiController,player,PlayerArray,currentChanceCard);
+    if(currentChanceCard.isMove){
+        fieldController.getGameboard()[currentPlayer.getPlayerPosition()%24].landOnField(fieldController, currentPlayer, Players, guiController, player, PlayerArray,chanceCardController);
+    }
 
     }
 }
