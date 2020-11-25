@@ -129,7 +129,7 @@ public class ChanceCardController
                         "\nHvis der ikke er nogen ledige felter, skal du købe et fra en anden spiller!");
                 guiController.showMessege("Træk et nyt chancekort");
                 drawChanceCard();
-                if(players[2] != null)
+                if(players.length >= 3)
                     currentChanceCard.redPlayerCard(players[2]);
                 break;
             case 12:
@@ -138,7 +138,7 @@ public class ChanceCardController
                         "\nHvis der ikke er nogen ledige felter, skal du købe et fra en anden spiller!");
                 guiController.showMessege("Træk et nyt chancekort");
                 drawChanceCard();
-                if(players[3] != null)
+                if(players.length == 4)
                     currentChanceCard.blackPlayerCard(players[3]);
                 break;
             case 13:
