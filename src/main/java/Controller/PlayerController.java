@@ -90,7 +90,7 @@ public class PlayerController {
     //Makes 2 player objects and assigns default values
     public void Make2Players()
     {
-        player1 = new Player("UNKNOWN",19000101, new Account(20), Color.black,0);
+        player1 = new Player("UNKNOWN",19000101, new Account(20), Color.green,0);
         player2 = new Player("UNKNOWN",19000101, new Account(20), Color.blue,1);
         playerArray = new Player[]{player1, player2};
     }
@@ -98,7 +98,7 @@ public class PlayerController {
     //Makes 3 player objects and assigns default values
     public void Make3Players()
     {
-        player1 = new Player("UNKNOWN", 19000101, new Account(18), Color.black,0);
+        player1 = new Player("UNKNOWN", 19000101, new Account(18), Color.green,0);
         player2 = new Player("UNKNOWN", 19000101, new Account(18), Color.blue,1);
         player3 = new Player("UNKNOWN", 19000101, new Account(18), Color.red,2);
         playerArray = new Player[]{player1, player2, player3};
@@ -107,10 +107,10 @@ public class PlayerController {
     //Makes 4 player objects and assigns default values
     public void Make4Players()
     {
-        player1 = new Player("UNKNOWN", 19000101, new Account(16), Color.black,0);
+        player1 = new Player("UNKNOWN", 19000101, new Account(16), Color.green,0);
         player2 = new Player("UNKNOWN", 19000101, new Account(16), Color.blue,1);
         player3 = new Player("UNKNOWN", 19000101, new Account(16), Color.red,2);
-        player4 = new Player("UNKNOWN", 19000101, new Account(16), Color.green,3);
+        player4 = new Player("UNKNOWN", 19000101, new Account(16), Color.black,3);
         playerArray = new Player[]{player1, player2, player3, player4};
     }
 
