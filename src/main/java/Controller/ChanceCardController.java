@@ -12,24 +12,24 @@ public class ChanceCardController
     private ChanceCard chanceCardDeck[] = new ChanceCard[18];
     public ChanceCardController()
     {
-        chanceCardDeck[0] = new ChanceCard(0, "chanceGreen");
-        chanceCardDeck[1] = new ChanceCard(1, "chanceStart");
-        chanceCardDeck[2] = new ChanceCard(2, "chanceMoveForward");
-        chanceCardDeck[3] = new ChanceCard(3, "chanceFreeOrange");
-        chanceCardDeck[4] = new ChanceCard(4, "chanceMoveOrChance");
-        chanceCardDeck[5] = new ChanceCard(5, "chanceBlue");
-        chanceCardDeck[6] = new ChanceCard(6, "chanceCandy");
-        chanceCardDeck[7] = new ChanceCard(7, "chanceFreeOrangeOrGreen");
-        chanceCardDeck[8] = new ChanceCard(8, "chanceFreeLightblue");
-        chanceCardDeck[9] = new ChanceCard(9, "chanceGetOutOfJail");
-        chanceCardDeck[10] = new ChanceCard(10, "chanceStrandpromenaden");
-        chanceCardDeck[11] = new ChanceCard(11, "chanceRed");
-        chanceCardDeck[12] = new ChanceCard(12, "chanceBlack");
-        chanceCardDeck[13] = new ChanceCard(13, "chanceBirthday");
-        chanceCardDeck[14] = new ChanceCard(14, "chanceFreePinkOrBlue");
-        chanceCardDeck[15] = new ChanceCard(15, "chanceHomework");
-        chanceCardDeck[16] = new ChanceCard(16, "chance FreeRed");
-        chanceCardDeck[17] = new ChanceCard(17, "chanceSkaterparken");
+        chanceCardDeck[0] = new ChanceCard(0, "chanceGreen",false);
+        chanceCardDeck[1] = new ChanceCard(1, "chanceStart",true);
+        chanceCardDeck[2] = new ChanceCard(2, "chanceMoveForward",true);
+        chanceCardDeck[3] = new ChanceCard(3, "chanceFreeOrange",true);
+        chanceCardDeck[4] = new ChanceCard(4, "chanceMoveOrChance",true);
+        chanceCardDeck[5] = new ChanceCard(5, "chanceBlue",false);
+        chanceCardDeck[6] = new ChanceCard(6, "chanceCandy",false);
+        chanceCardDeck[7] = new ChanceCard(7, "chanceFreeOrangeOrGreen",true);
+        chanceCardDeck[8] = new ChanceCard(8, "chanceFreeLightblue",true);
+        chanceCardDeck[9] = new ChanceCard(9, "chanceGetOutOfJail",false);
+        chanceCardDeck[10] = new ChanceCard(10, "chanceStrandpromenaden",true);
+        chanceCardDeck[11] = new ChanceCard(11, "chanceRed",false);
+        chanceCardDeck[12] = new ChanceCard(12, "chanceBlack",false);
+        chanceCardDeck[13] = new ChanceCard(13, "chanceBirthday",false);
+        chanceCardDeck[14] = new ChanceCard(14, "chanceFreePinkOrBlue",true);
+        chanceCardDeck[15] = new ChanceCard(15, "chanceHomework",true);
+        chanceCardDeck[16] = new ChanceCard(16, "chance FreeRed",true);
+        chanceCardDeck[17] = new ChanceCard(17, "chanceSkaterparken",true);
     }
     public ChanceCard drawChanceCard()
     {

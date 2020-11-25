@@ -9,12 +9,16 @@ public class ChanceCard
 {
     int chanceCardID;
     String chanceCardName;
+    boolean isMove;
 
-    public ChanceCard(int id, String name)
+    public ChanceCard(int id, String name,boolean move)
     {
         chanceCardID = id;
         chanceCardName = name;
+        isMove = move;
+
     }
+    public boolean getIsmove(){return isMove;}
     public int getChanceCardID(){return this.chanceCardID;}
     public void blackPlayerCard(Player player1)
     {
