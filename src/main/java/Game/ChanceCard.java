@@ -136,7 +136,7 @@ public class ChanceCard
         checkIfPropertyIsBought(currentPlayer, (PropertyField)FC.getGameboard()[currentPlayer.getPlayerPosition()]);
         GUIController.placePlayer(currentPlayer.getPlayerPosition(), player);
     }
-    public void freePinkOrBlueCard(Player currentPlayer, FieldController FC, GUIController GUIController,GUI_Player player)
+    public void freePinkOrBlueCard(Player currentPlayer, FieldController fieldController, GUIController GUIController,GUI_Player player)
     {
         GUIController.removePlayer(currentPlayer.getPlayerPosition(),player);
         String button = GUIController.fourButtons("Gratis felt! Ryk frem til et pink eller blåt felt." +
@@ -158,7 +158,7 @@ public class ChanceCard
         {
             currentPlayer.setPlayerPosition(23);
         }
-        checkIfPropertyIsBought(currentPlayer, (PropertyField)FC.getGameboard()[currentPlayer.getPlayerPosition()]);
+        checkIfPropertyIsBought(currentPlayer, (PropertyField)fieldController.getGameboard()[currentPlayer.getPlayerPosition()]);
         GUIController.placePlayer(currentPlayer.getPlayerPosition(), player);
     }
     public void birthdayCard(Player currentPlayer, Player[] players)

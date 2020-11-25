@@ -2,50 +2,48 @@ package Game;
 import Controller.*;
 import gui_fields.GUI_Player;
 
-import java.awt.*;
-
-
 
 public class Gameloop {
-    private static DiceController Dc = new DiceController();
-private static FieldController FC = new FieldController();
-private static GUIController GC = new GUIController();
-private static PlayerController PC = new PlayerController();
-private static Menu Mn = new Menu();
+    private static DiceController diceController = new DiceController();
+private static FieldController fieldController = new FieldController();
+private static GUIController guiController = new GUIController();
+private static PlayerController playerController = new PlayerController();
+private static Menu menu = new Menu();
 
-private static Rules rl = new Rules();
-private static ChanceCardController CC = new ChanceCardController();
+private static Rules rules = new Rules();
+private static ChanceCardController chanceCardController = new ChanceCardController();
 private static boolean isGameRunning = true;
 private static int roll;
 public static void gameloop(){
     //Player[] playerArray = {new Player("Louis", 20001006, new Account(200), Color.black,0),new Player("Isak", 20001030, new Account(200), Color.blue,1)};
     //PC.setPlayerArray(playerArray);
     Player[] playerArray;
-    Mn.AddPlayer(GC,PC);
-    PC.setCurrentPlayer(PC.youngestPlayer().getPlayerId());
-    CC.shuffleChanceCardDeck();
-    Player currentPlayer = PC.getCurrentPlayer();
-    GUI_Player[] GuiPlayers = GC.createplayer(PC.getPlayerArray());
+    menu.AddPlayer(guiController, playerController);
+    playerController.setCurrentPlayer(playerController.youngestPlayer().getPlayerId());
+    chanceCardController.shuffleChanceCardDeck();
+    Player currentPlayer = playerController.getCurrentPlayer();
+    GUI_Player[] GuiPlayers = guiController.createplayer(playerController.getPlayerArray());
     while(isGameRunning) {
-            currentPlayer = PC.getCurrentPlayer();
+            currentPlayer = playerController.getCurrentPlayer();
+            rules.hasChanceCard(fieldController,currentPlayer,playerController.getPlayerArray(),guiController,GuiPlayers[currentPlayer.getPlayerId()],GuiPlayers,chanceCardController);
             rollDice(currentPlayer, GuiPlayers);
-            rl.startRules(currentPlayer, GC);
-            FC.getGameboard()[currentPlayer.getPlayerPosition()%24].landOnField(FC, currentPlayer, PC.getPlayerArray(), GC, GuiPlayers[currentPlayer.getPlayerId()], GuiPlayers,CC);
+            rules.startRules(currentPlayer, guiController);
+            fieldController.getGameboard()[currentPlayer.getPlayerPosition()%24].landOnField(fieldController, currentPlayer, playerController.getPlayerArray(), guiController, GuiPlayers[currentPlayer.getPlayerId()], GuiPlayers, chanceCardController);
             GuiPlayers[currentPlayer.getPlayerId()].setBalance(currentPlayer.getPlayerAccount().getBalance());
-            isGameRunning = rl.win(currentPlayer, GC,PC);
-        PC.NextPlayer();
+            isGameRunning = rules.win(currentPlayer, guiController, playerController);
+        playerController.NextPlayer();
     }
 }
     public static void main(String[] args){
     gameloop();
     }
     public static void rollDice(Player currentPlayer, GUI_Player[] GuiPlayers){
-        GC.oneButton("its" + " " + currentPlayer.getPlayerName() + " " + "to roll click roll", "roll");
-        Dc.diceRoll();
-        roll = Dc.diceValue();
-        GC.showDice(roll);
+        guiController.oneButton("its" + " " + currentPlayer.getPlayerName() + " " + "to roll click roll", "roll");
+        diceController.diceRoll();
+        roll = diceController.diceValue();
+        guiController.showDice(roll);
         int newPlayerPosition = (currentPlayer.getPlayerPosition() + roll);
-        GC.movePlayer(currentPlayer.getPlayerPosition(), roll, GuiPlayers[currentPlayer.getPlayerId()]);
+        guiController.movePlayer(currentPlayer.getPlayerPosition(), roll, GuiPlayers[currentPlayer.getPlayerId()]);
         currentPlayer.setPlayerPosition(newPlayerPosition);
     }
 }

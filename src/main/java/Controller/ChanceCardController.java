@@ -63,106 +63,106 @@ public class ChanceCardController
         }
         random=null;
     }
-    public void executeChanceCard(FieldController FC, Player currentPlayer,Player[] players, GUIController GC, GUI_Player player,
+    public void executeChanceCard(FieldController fieldController, Player currentPlayer,Player[] players, GUIController guiController, GUI_Player player,
                                   GUI_Player[] PlayerArray, ChanceCard currentChanceCard){
         switch (currentChanceCard.getChanceCardID()) {
             case 0:
                 currentChanceCard.greenPlayerCard(players[0]);
-                GC.showChanceCard("Giv dette kort til grøn spiller, og tag et chancekort mere." +
+                guiController.showChanceCard("Giv dette kort til grøn spiller, og tag et chancekort mere." +
                         "\nGrøn spiller: På din næste tur skal du drøne frem til et hvilket som helst ledigt felt og købe det." +
                         "\nHvis der ikke er nogen ledige felter, skal du købe et fra en anden spiller!");
-                GC.showMessege("Træk et nyt chancekort");
+                guiController.showMessege("Træk et nyt chancekort");
                 drawChanceCard();
                 break;
             case 1:
-                currentChanceCard.startCard(currentPlayer,player,(StartField) FC.getGameboard()[0],GC);
-                GC.showChanceCard("Ryk frem til start og modtag 2M.");
+                currentChanceCard.startCard(currentPlayer,player,(StartField) fieldController.getGameboard()[0],guiController);
+                guiController.showChanceCard("Ryk frem til start og modtag 2M.");
                 break;
             case 2:
-                currentChanceCard.fiveFieldsForwardCard(currentPlayer,player,GC);
-                GC.showChanceCard("Ryk op til 5 felter frem.");
+                currentChanceCard.fiveFieldsForwardCard(currentPlayer,player,guiController);
+                guiController.showChanceCard("Ryk op til 5 felter frem.");
                 break;
             case 3:
-                currentChanceCard.freeOrangeCard(currentPlayer,FC,GC,player);
-                GC.showChanceCard("Gratis felt!" +
+                currentChanceCard.freeOrangeCard(currentPlayer,fieldController,guiController,player);
+                guiController.showChanceCard("Gratis felt!" +
                         "\nRyk frem til et orange felt. Hvis det er ledigt, får du det gratis! Ellers skal du betale leje til ejeren.");
                 break;
             case 4:
-                currentChanceCard.moveOneOrDrawChanceCardCard(currentPlayer,GC,this,player);
-                GC.showChanceCard("Ryk 1 felt frem, eller tag et chancekort mere.");
+                currentChanceCard.moveOneOrDrawChanceCardCard(currentPlayer,guiController,this,player);
+                guiController.showChanceCard("Ryk 1 felt frem, eller tag et chancekort mere.");
                 break;
             case 5:
                 currentChanceCard.bluePlayerCard(players[1]);
-                GC.showChanceCard("Giv dette kort til blå spiller, og tag et chancekort mere." +
+                guiController.showChanceCard("Giv dette kort til blå spiller, og tag et chancekort mere." +
                         "\nBlå spiller: På din næste tur skal du drøne frem til et hvilket som helst ledigt felt og købe det." +
                         "\nHvis der ikke er nogen ledige felter, skal du købe et fra en anden spiller!");
-                GC.showMessege("Træk et nyt chancekort");
+                guiController.showMessege("Træk et nyt chancekort");
                 drawChanceCard();
                 break;
             case 6:
                 currentChanceCard.tooMuchCandyCard(currentPlayer);
-                GC.showChanceCard("Du har spist for meget slik." +
+                guiController.showChanceCard("Du har spist for meget slik." +
                         "\nBetal 2M til banken.");
                 break;
             case 7:
-                currentChanceCard.freeOrangeOrGreenCard(currentPlayer,FC,GC,player);
-                GC.showChanceCard("Gratis felt!" +
+                currentChanceCard.freeOrangeOrGreenCard(currentPlayer,fieldController,guiController,player);
+                guiController.showChanceCard("Gratis felt!" +
                         "\nRyke frem til et orange eller grønt felt. Hvis det er ledigt, får du det gratis! Ellers skal du betale leje til ejeren");
                 break;
             case 8:
-                currentChanceCard.freeLightBlueCard(currentPlayer,FC,GC,player);
-                GC.showChanceCard("Gratis felt!" +
+                currentChanceCard.freeLightBlueCard(currentPlayer,fieldController,guiController,player);
+                guiController.showChanceCard("Gratis felt!" +
                         "\nRyk frem til et lyseblåt felt. Hvis det er ledigt, får du det gratis! Ellers skal du betale leje til ejeren.");
                 break;
             case 9:
                 currentChanceCard.getOutOfJailCard(currentPlayer);
-                GC.showChanceCard("Du løslades uden omkostninger." +
+                guiController.showChanceCard("Du løslades uden omkostninger." +
                         "\nBehold dette kort, indtil du får brug for det.");
                 break;
             case 10:
-                currentChanceCard.strandpromenadenCard(currentPlayer,player,GC);
-                GC.showChanceCard("Ryk frem til Standpromenaden.");
+                currentChanceCard.strandpromenadenCard(currentPlayer,player,guiController);
+                guiController.showChanceCard("Ryk frem til Standpromenaden.");
                 break;
             case 11:
-                GC.showChanceCard("Giv dette kort til rød spiller, og tag et chancekort mere." +
+                guiController.showChanceCard("Giv dette kort til rød spiller, og tag et chancekort mere." +
                         "\nRød spiller: På din næste tur skal du drøne frem til et hvilket som helst ledigt felt og købe det." +
                         "\nHvis der ikke er nogen ledige felter, skal du købe et fra en anden spiller!");
-                GC.showMessege("Træk et nyt chancekort");
+                guiController.showMessege("Træk et nyt chancekort");
                 drawChanceCard();
                 if(players[2] != null)
                     currentChanceCard.redPlayerCard(players[2]);
                 break;
             case 12:
-                GC.showChanceCard("Giv dette kort til sort spiller, og tag et chancekort mere." +
+                guiController.showChanceCard("Giv dette kort til sort spiller, og tag et chancekort mere." +
                         "\nSort spiller: På din næste tur skal du drøne frem til et hvilket som helst ledigt felt og købe det." +
                         "\nHvis der ikke er nogen ledige felter, skal du købe et fra en anden spiller!");
-                GC.showMessege("Træk et nyt chancekort");
+                guiController.showMessege("Træk et nyt chancekort");
                 drawChanceCard();
                 if(players[3] != null)
                     currentChanceCard.blackPlayerCard(players[3]);
                 break;
             case 13:
                 currentChanceCard.birthdayCard(currentPlayer,players);
-                GC.showChanceCard("Det er din fødselsdag! Alle giver dig 1M." +
+                guiController.showChanceCard("Det er din fødselsdag! Alle giver dig 1M." +
                         "\nTillykke med fødselsdagen!");
                 break;
             case 14:
-                currentChanceCard.freePinkOrBlueCard(currentPlayer,FC,GC,player);
-                GC.showChanceCard("Gratis felt!" +
+                currentChanceCard.freePinkOrBlueCard(currentPlayer,fieldController,guiController,player);
+                guiController.showChanceCard("Gratis felt!" +
                         "\nRyk frem til et pink eller blåt felt. Hvis det er ledigt, får du det gratis! Ellers skal du betale leje til ejeren.");
                 break;
             case 15:
                 currentChanceCard.homeworkCard(currentPlayer);
-                GC.showChanceCard("Du har lavet alle dine lektier!" +
+                guiController.showChanceCard("Du har lavet alle dine lektier!" +
                         "\nModtage 2M fra banken.");
                 break;
             case 16:
-                currentChanceCard.freeRedCard(currentPlayer,FC,GC,player);
-                GC.showChanceCard("Gratis felt! Ryk frem til et rødt felt. Hvis det er ledigt, får du det gratis! Ellers skal du betale leje til ejeren.");
+                currentChanceCard.freeRedCard(currentPlayer,fieldController,guiController,player);
+                guiController.showChanceCard("Gratis felt! Ryk frem til et rødt felt. Hvis det er ledigt, får du det gratis! Ellers skal du betale leje til ejeren.");
                 break;
             case 17:
-                currentChanceCard.skaterparkenCard(currentPlayer,FC,player,GC);
-                GC.showChanceCard("Gratis felt!" +
+                currentChanceCard.skaterparkenCard(currentPlayer,fieldController,player,guiController);
+                guiController.showChanceCard("Gratis felt!" +
                         "\nRyk frem til Skaterparken for at lave det perfekte grind! " +
                         "\nHvis ingen ejer den, får du den gratis! Ellers skal du betale leje til ejeren.");
                 break;

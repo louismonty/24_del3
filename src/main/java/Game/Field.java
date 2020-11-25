@@ -16,5 +16,5 @@ public abstract class Field
         this.colorID = colorID;
         this.name = name;
     }
-    public abstract void landOnField(FieldController FC, Player currentPlayer, Player[] Players, GUIController GC, GUI_Player player, GUI_Player[] PlayerArray, ChanceCardController CC);
+    public abstract void landOnField(FieldController fieldController, Player currentPlayer, Player[] playerArray, GUIController guiController, GUI_Player guiPlayer, GUI_Player[] guiPlayerArray, ChanceCardController chanceCardController);
 }

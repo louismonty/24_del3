@@ -27,10 +27,10 @@ public class JailField extends Field
             currentPlayer.getPlayerAccount().subtractBalance(1);
         }
     }
-    public void landOnField(FieldController FC, Player currentPlayer,Player[] Players, GUIController GC, GUI_Player player, GUI_Player[] PlayerArray, ChanceCardController CH)
+    public void landOnField(FieldController fieldController, Player currentPlayer, Player[] playerArray, GUIController guiController, GUI_Player guiPlayer, GUI_Player[] guiPlayerArray, ChanceCardController chanceCardController)
     {
         goToJail(currentPlayer);
-        GC.showMessege("du kommer i fængslet");
-        GC.movePlayer(18,12,player);
+        guiController.showMessege("du kommer i fængslet");
+        guiController.movePlayer(18,12, guiPlayer);
     }
 }
