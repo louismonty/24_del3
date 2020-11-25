@@ -15,8 +15,6 @@ private static ChanceCardController chanceCardController = new ChanceCardControl
 private static boolean isGameRunning = true;
 private static int roll;
 public static void gameloop(){
-    //Player[] playerArray = {new Player("Louis", 20001006, new Account(200), Color.black,0),new Player("Isak", 20001030, new Account(200), Color.blue,1)};
-    //PC.setPlayerArray(playerArray);
     Player[] playerArray;
     menu.AddPlayer(guiController, playerController);
     playerController.setCurrentPlayer(playerController.youngestPlayer().getPlayerId());
