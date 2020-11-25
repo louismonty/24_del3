@@ -42,7 +42,7 @@ public class ChanceCard
     {
         int newPosition = GUIController.intigerInput("Ryk op til 5 felter frem.", 1, 5);
         GUIController.removePlayer(currentPlayer.getPlayerPosition(),player);
-        newPosition = newPosition + currentPlayer.getPlayerPosition();
+        newPosition = (newPosition + currentPlayer.getPlayerPosition())%17;
         currentPlayer.setPlayerPosition(newPosition);
         GUIController.placePlayer(currentPlayer.getPlayerPosition(), player);
     }
