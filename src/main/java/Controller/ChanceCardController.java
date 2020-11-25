@@ -31,6 +31,11 @@ public class ChanceCardController
         chanceCardDeck[16] = new ChanceCard(16, "chance FreeRed",true);
         chanceCardDeck[17] = new ChanceCard(17, "chanceSkaterparken",true);
     }
+
+    /**
+     * Move the cards in the deck 1 time and draws the first card
+     * @return the first card in the deck
+     */
     public ChanceCard drawChanceCard()
     {
         for(int i = 0; i<=chanceCardDeck.length-1; i++)
@@ -48,6 +53,7 @@ public class ChanceCardController
 
     /**
      * method copied from https://www.geeksforgeeks.org/shuffle-a-deck-of-cards-3/
+     * randomizes the indexes in chanceCardDeck
      */
     public void shuffleChanceCardDeck()
     {
@@ -63,6 +69,17 @@ public class ChanceCardController
         }
         random=null;
     }
+
+    /**
+     * Goes through a switch array to find the correct chancecard and executes it while displaying card text in GUI
+     * @param fieldController
+     * @param currentPlayer
+     * @param players
+     * @param guiController
+     * @param player
+     * @param PlayerArray
+     * @param currentChanceCard
+     */
     public void executeChanceCard(FieldController fieldController, Player currentPlayer,Player[] players, GUIController guiController, GUI_Player player,
                                   GUI_Player[] PlayerArray, ChanceCard currentChanceCard){
         switch (currentChanceCard.getChanceCardID()) {
