@@ -14,13 +14,16 @@ private static PlayerController PC = new PlayerController();
 private static Menu Mn = new Menu();
 
 private static Rules rl = new Rules();
+private static ChanceCardController CC = new ChanceCardController();
 private static boolean isGameRunning = true;
 private static int roll;
 public static void gameloop(){
-    //Player[] playerArray = {new Player("Louis", 20, new Account(200), Color.black,0),new Player("Isak", 25, new Account(200), Color.blue,1)};
+    //Player[] playerArray = {new Player("Louis", 20001006, new Account(200), Color.black,0),new Player("Isak", 20001030, new Account(200), Color.blue,1)};
     //PC.setPlayerArray(playerArray);
     Player[] playerArray;
-    PC.setPlayerArray(Mn.AddPlayer(GC));
+    Mn.AddPlayer(GC,PC);
+    PC.setCurrentPlayer(PC.youngestPlayer().getPlayerId());
+    CC.shuffleChanceCardDeck();
     Player currentPlayer = PC.getCurrentPlayer();
     GUI_Player[] GuiPlayers = GC.createplayer(PC.getPlayerArray());
     while(isGameRunning) {
