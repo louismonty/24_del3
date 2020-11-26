@@ -7,8 +7,8 @@ import gui_main.GUI;
 
 public class ChanceCard
 {
-    int chanceCardID;
-    String chanceCardName;
+    private int chanceCardID;
+    private String chanceCardName;
     boolean isMove;
 
     public ChanceCard(int id, String name,boolean move)
