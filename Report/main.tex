@@ -75,6 +75,10 @@ numbersep=0.5cm
 \input{sources/0_frontpage.tex}
 
 \newpage
+\input{Report/sources/1__Abstract}
+\thispagestyle{fancy}
+
+\newpage
 \doublespacing
 %\addcontentsline{toc}{section}{Table of Contents}
 \renewcommand{\baselinestretch}{1}\normalsize
@@ -83,6 +87,8 @@ numbersep=0.5cm
 %\singlespacing
 \thispagestyle{fancy} % force page style
 
+
+
 \newpage
 \section{Timeregnskab}
 \input{Report/sources/0a_Timeregnskab}
@@ -90,10 +96,7 @@ numbersep=0.5cm
 \pagenumbering{arabic} 
 \fancyfoot[C]{Page \thepage\ of \pageref{endOfDoc}}
 
-\newpage
-\section{Abstract}
-\input{Report/sources/1__Abstract}
-\thispagestyle{fancy}
+
 
 \newpage
 \section{Introduktion}
@@ -128,6 +131,11 @@ numbersep=0.5cm
 \newpage
 \section{Projektplanlægning}
 \input{Report/sources/7_Projektplanlægning}
+\thispagestyle{fancy}
+
+\newpage
+\section{Brugerguide}
+\input{Report/sources/7a_Konfigurationsstyring}
 \thispagestyle{fancy}
 
 \newpage
