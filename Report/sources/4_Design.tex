@@ -34,8 +34,29 @@ Figur 5.1.5. Sekvensdiagram over polymorphism af metoden landOnField for Propert
 \includegraphics[width=0.9\textwidth]{Report/figures/Sekvensdiagram_StartField.png}~\\[0cm]
 Figur 5.1.6. StartField over polymorphism af metoden landOnField for ChanceField.
 \subsection{Designmønster GRASP}
-I dette afsnit beskriver vi kort, hvordan vores design har overholdt GRASP principper. Her refereres der til designklassediagrammet (se figur 5.2.1) uden at danne en fyldestgørende beskrivelse af dette diagram. For en fyldestgørende beskrivelse, se afsnit 5.3.
+I dette afsnit beskriver vi kort, hvordan vores design har overholdt GRASP principper. Her refereres der til designklassediagrammet (se figur 5.2.1) uden at danne en fyldestgørende beskrivelse af dette diagram. For en fyldestgørende beskrivelse af designdiagrammet, se afsnit 5.3.
+\paragraph*{Creator:} I designklassediagrammet ses det, at vi har opdelt ansvaret for creators, således at der findes fire controllers, der har ansvaret for at instantiere objekter af klasser forskellige klasser: ChanceCardController, FieldController, PlayerController, GUIController og DiceController.
+
+\paragraph*{Controller:}
+Her har vi indført de tidligere nævnte controllers, der har forskellige ansvar for at bearbejde handlinger og metoder i systemet. Controllers bearbejder altså den klasse, de er ansvarlige for og videresender denne information i systemet. Herudover kan Menu også anses som en controller, der styrer brugerinput inden spillet er sat igang.
+
+\paragraph*{Low Coupling:}
+I vores designmønster har vi stræbt efter low coupling. Det vil sige, at vores klasser har få relationer til hinanden, da der veldefinerede ansvarsområder. F.eks. ses det, at ChanceCard ikke har en relation til andet end ChanceCardController, da dette objekt jo netop tager ansvaret for metodernei klassen.
+
+\paragraph*{High Cohesion:}
+Vi har sørget for at overholder principper om high cohesion ved kun at definere ansvar for klasser, hvor det er relevant. F.eks. ses det, at vi har opdelt Player i Player og Account, som gør, at hver klasse har mere præcise definerede ansvarsområder.
+
+\paragraph*{Polymorphism:}
+Vores brug af polymorphism ses specifikt ved Field klassen, der nedarves af fem forskellige klasser. Her er metoden landOnField polymorfisk, da udførslen er varierer mellem de forskellige nedarvede klasser.
+
+\paragraph*{Information Expert:}
+Det ses, at vi stræber efter, at klasser kun udfører handlinger, som de har nok information til at udføre. F.eks. udfører DiceController kun handlinger, der vedrører Dice - se metodern diceRoll() og diceValue().
+
+\paragraph*{Protected Variation:}
+For at overholde protected variation gør vi brug af dataindkapsling for variable og nedarvning for Field klassen. Dette gør, at de forskellige delelementer i systemet er "beskyttede" fra ændringer i andre delelementer.
+
 \subsection{Designklassediagram}
+Vores designklassediagram er en udbyggelse af domænemodellen og sekvensdiagrammet (se figur 5.2.1). Vi har altså en Gameloop klasse, der styrer hele spillet og danner nye objekter for controllers, Menu og Rules. Her ses det, at hver controller har et veldefineret ansvarsområde. F.eks. er FieldController ansvarlig for Field klassen. For Player klassen ses det, at Account er en komposition. Dette er dels fordi account ikke eksisterer uden en Player.
 \begin{center}
 \includegraphics[width=1\textwidth]{Report/figures/Class Diagram.png}~\\[0cm]
 \end{center}
